@@ -3,17 +3,19 @@ import React from "react";
 const Potencia = () => {
   return (
     <> 
-    <table>
+    <section className="enpt">
+      <h2>Potencia</h2>
+    <table className="tablas">
       <tr>
-        <th>Potencia facturada (kW)
+        <th className="th1">Potencia facturada (kW)
 </th>
-        <th>Precios potencia (€/kWh/dia)
+        <th className="th1">Precios potencia (€/kWh/dia)
 </th>
-        <th>Descuento</th>
-        <th>Precio con descuento</th>
-        <th>Total pago en factura
+        <th className="th1">Descuento</th>
+        <th className="th1">Precio con descuento</th>
+        <th className="th1">Total pago en factura
 </th>
-        <th>Total pago anual
+        <th className="th1">Total pago anual
 </th>
       </tr>
       <tr>
@@ -73,6 +75,7 @@ const Potencia = () => {
         <td><input type="text" /></td>
       </tr>
     </table>
+    </section>
     </>
   )
 };

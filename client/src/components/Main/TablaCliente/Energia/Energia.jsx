@@ -3,22 +3,24 @@ import React from "react";
 const Energia = () => {
   return (
     <>
-      <table>
+    <section className="enpt">
+      <h2>Energía</h2>
+      <table className="tablas">
         <tr>
-          <th>Consumo anual (kWh)</th>
-          <th>Consumo factura actual (kWh)
+          <th className="th1">Consumo anual (kWh)</th>
+          <th className="th1">Consumo factura actual (kWh)
           </th>
-          <th>Precio energía activa media anual facturación (€/kWh)
+          <th className="th1">Precio energía activa media anual facturación (€/kWh)
           </th>
-          <th>Precio energía activa mes de facturación (€/kWh)
-</th>
-          <th>Descuento</th>
-          <th>Precio con descuento
-</th>
-          <th>Total pago en factura
-</th>
-          <th>Total pago anual
-</th>
+          <th className="th1">Precio energía activa mes de facturación (€/kWh)
+          </th>
+          <th className="th1">Descuento</th>
+          <th className="th1">Precio con descuento
+          </th>
+          <th className="th1">Total pago en factura
+          </th>
+          <th className="th1">Total pago anual
+          </th>
         </tr>
         <tr>
           <td><input type="text" /></td>
@@ -91,6 +93,7 @@ const Energia = () => {
           <td><input type="text" /></td>
         </tr>
       </table>
+      </section>
     </>
   );
 };
