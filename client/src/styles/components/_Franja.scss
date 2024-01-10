@@ -1,10 +1,10 @@
 @import '../utils/variables.scss';
 
-.hidden{
+.hidden {
         visibility: hidden;
 }
 
-.spare{
+.spare {
         display: flex;
         padding: 24px;
         flex-direction: column;
@@ -13,3 +13,6 @@
         border-radius: 18px;
 }
 
+.white {
+        background-color: $white;
+}

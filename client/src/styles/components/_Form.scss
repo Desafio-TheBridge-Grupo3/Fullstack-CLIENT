@@ -1,0 +1,29 @@
+@import '../utils/variables.scss';
+
+
+.label {
+    border-radius: 4px;
+    background: var(--several-principal-60, $tabla2);
+    width: 160px;
+    height: 72px;
+    padding: 8px;
+    align-items: center;
+    margin: 8px;
+
+}
+
+.select {
+    border-radius: 4px;
+    background: $cell;
+    width: 160px;
+    height: 72px;
+    padding: 8px;
+    align-items: center;
+    margin: 8px;
+}
+
+.options {
+    display: flex;
+    margin-left: 450px;
+    margin-bottom: 50px;
+}

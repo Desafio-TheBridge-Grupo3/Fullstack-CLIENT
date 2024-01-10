@@ -1,11 +1,9 @@
 import React from "react";
-import { useForm } from "react-hook-form"
 
-
-const Energia = () => {
+const SEnergia = () => {
   return (
     <>
-    <section className="enpt">
+    <section className="propenpt">
       <h2>Energía</h2>
       <table className="subtablas">
         <tr>
@@ -100,4 +98,4 @@ const Energia = () => {
   );
 };
 
-export default Energia;
+export default SEnergia;

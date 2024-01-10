@@ -1,13 +1,11 @@
 import React from "react";
-import { useForm } from "react-hook-form"
 
-
-const Potencia = () => {
+const SPotencia = () => {
   return (
     <> 
-    <section className="enpt">
+    <section className="propenpt">
       <h2>Potencia</h2>
-    <table className="subtablas">
+      <table className="subtablas">
       <tr>
         <th className="th1">Potencia facturada (kW)
 </th>
@@ -79,7 +77,7 @@ const Potencia = () => {
     </table>
     </section>
     </>
-  )
+  );
 };
 
-export default Potencia;
+export default SPotencia;
