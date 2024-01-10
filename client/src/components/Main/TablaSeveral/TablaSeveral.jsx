@@ -1,7 +1,22 @@
 import React from "react";
+import SFranja from './SFranja';
+import SEnergia from './SEnergia';
+import SPotencia from './SPotencia';
 
 const TablaSeveral = () => {
-  return <div>TablaSeveral</div>;
+  return (
+    <>
+      <section>
+        <h1 className="tituloTabla">Propuesta Several</h1>
+    
+        <article className="tabla1">
+          <SFranja />
+          <SEnergia />
+          <SPotencia />
+        </article>
+      </section>
+    </>
+  )
 };
 
 export default TablaSeveral;
