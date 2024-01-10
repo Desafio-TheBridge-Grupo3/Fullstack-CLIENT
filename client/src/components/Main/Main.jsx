@@ -1,13 +1,11 @@
 import React from "react";
 import Oferta from './Oferta'
+import TablaSeveral from './TablaSeveral'
 
 const Main = () => {
   return (
     <>
-      <div>
-        Main
-      </div>
-      <Oferta />
+      <TablaSeveral/>
     </>
   )
 };
