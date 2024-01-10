@@ -2,6 +2,7 @@ import React from "react";
 import Franja from "./Franja"
 import Energia from "./Energia"
 import Potencia from "./Potencia"
+import Otros from "./Otros"
 
 const TablaCliente = () => {
   return (
@@ -14,14 +15,16 @@ const TablaCliente = () => {
             <option value="iberdrola">Iberdrola</option>
             <option value="naturgy">Naturgy</option>
             <option value="acciona">Acciona</option>
-
           </select>
         </article>
+
         <article className="tabla1">
           <Franja />
           <Energia />
           <Potencia />
+          <Otros />
         </article>
+        
       </section>
     </>
   )
