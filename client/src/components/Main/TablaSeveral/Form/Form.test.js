@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow } from "enzyme";
-import SFranja from "./SFranja";
+import Form from "./Form";
 
-describe("SFranja", () => {
+describe("Form", () => {
   test("matches snapshot", () => {
-    const wrapper = shallow(<SFranja />);
+    const wrapper = shallow(<Form />);
     expect(wrapper).toMatchSnapshot();
   });
 });

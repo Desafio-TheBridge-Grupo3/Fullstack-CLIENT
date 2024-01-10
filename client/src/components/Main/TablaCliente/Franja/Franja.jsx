@@ -9,25 +9,25 @@ const Franja = () => {
         <table className="subtablas">
           <th className="th1">Franja</th>
           <tr>
-            <td>P1</td>
+            <td className="white">P1</td>
           </tr>
           <tr>
-            <td>P2</td>
+            <td className="white">P2</td>
           </tr>
           <tr>
-            <td>P3</td>
+            <td className="white">P3</td>
           </tr>
           <tr>
-            <td>P4</td>
+            <td className="white">P4</td>
           </tr>
           <tr>
-            <td>P5</td>
+            <td className="white">P5</td>
           </tr>
           <tr>
-            <td>P6</td>
+            <td className="white">P6</td>
           </tr>
           <tr>
-            <td>Total</td>
+            <td className="white">TOTAL</td>
           </tr>
         </table>
       </section>
