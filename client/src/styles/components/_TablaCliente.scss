@@ -1,0 +1,8 @@
+@import '../utils/variables.scss';
+
+.tabla1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 16px;
+}
