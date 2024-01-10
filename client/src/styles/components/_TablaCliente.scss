@@ -14,7 +14,7 @@
     align-items: flex-start;
     gap: 24px;
     border-radius: 18px;
-    background: $lgred;
+    background: $tabla1;
 
 }
 
@@ -54,11 +54,12 @@ td {
     align-items: center;
     gap: 8px;
     border-radius: 4px;
-    background: $white;
+    background: $cell;
 }
 
 input {
     border: none;
+    background: $cell;
 }
 
 .compañia {

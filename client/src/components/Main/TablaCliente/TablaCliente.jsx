@@ -6,7 +6,7 @@ import Potencia from "./Potencia"
 const TablaCliente = () => {
   return (
     <>
-      <section>
+      <section className="tablaGrande">
         <h1 className="tituloTabla">Compañía actual</h1>
         <article>
           <select className="compañia" name="compañia" id="compañia">

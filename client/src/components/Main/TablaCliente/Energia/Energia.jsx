@@ -30,9 +30,9 @@ const Energia = () => {
           <td><input type="text" /></td>
           <td><input type="text" /></td>
           <td><input type="text" /></td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
+          <td className="total"><input className="total" type="text" /></td>
+          <td className="total"><input className="total" type="text" /></td>
+          <td className="total"><input className="total" type="text" /></td>
         </tr>
         <tr>
           <td><input type="text" /></td>
@@ -40,9 +40,9 @@ const Energia = () => {
           <td><input type="text" /></td>
           <td><input type="text" /></td>
           <td><input type="text" /></td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
+          <td className="total"><input className="total" type="text" /></td>
+          <td className="total"><input className="total" type="text" /></td>
+          <td className="total"><input className="total" type="text" /></td>
         </tr>
         <tr>
           <td><input type="text" /></td>
@@ -50,9 +50,9 @@ const Energia = () => {
           <td><input type="text" /></td>
           <td><input type="text" /></td>
           <td><input type="text" /></td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
+          <td className="total"><input className="total" type="text" /></td>
+          <td className="total"><input className="total" type="text" /></td>
+          <td className="total"><input className="total" type="text" /></td>
         </tr>
         <tr>
           <td><input type="text" /></td>
@@ -60,9 +60,9 @@ const Energia = () => {
           <td><input type="text" /></td>
           <td><input type="text" /></td>
           <td><input type="text" /></td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
+          <td className="total"><input className="total" type="text" /></td>
+          <td className="total"><input className="total" type="text" /></td>
+          <td className="total"><input className="total" type="text" /></td>
         </tr>
         <tr>
           <td><input type="text" /></td>
@@ -70,9 +70,9 @@ const Energia = () => {
           <td><input type="text" /></td>
           <td><input type="text" /></td>
           <td><input type="text" /></td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
+          <td className="total"><input className="total" type="text" /></td>
+          <td className="total"><input className="total" type="text" /></td>
+          <td className="total"><input className="total" type="text" /></td>
         </tr>
         <tr>
           <td><input type="text" /></td>
@@ -80,19 +80,19 @@ const Energia = () => {
           <td><input type="text" /></td>
           <td><input type="text" /></td>
           <td><input type="text" /></td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
+          <td className="total"><input className="total" type="text" /></td>
+          <td className="total"><input className="total" type="text" /></td>
+          <td className="total"><input className="total" type="text" /></td>
         </tr>
         <tr>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
+          <td className="total"><input className="total" type="text" /></td>
+          <td className="total"><input className="total" type="text" /></td>
+          <td className="hidden"><input type="text" /></td>
+          <td className="hidden"><input type="text" /></td>
+          <td className="hidden"><input type="text" /></td>
+          <td className="hidden"><input type="text" /></td>
+          <td className="total"><input className="total" type="text" /></td>
+          <td className="total"><input className="total" type="text" /></td>
         </tr>
       </table>
       </section>
