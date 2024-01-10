@@ -3,9 +3,9 @@ import React from "react";
 const SEnergia = () => {
   return (
     <>
-    <section className="enpt">
+    <section className="propenpt">
       <h2>Energía</h2>
-      <table className="tablas">
+      <table className="subtablas">
         <tr>
           <th className="th1">Consumo anual (kWh)</th>
           <th className="th1">Consumo factura actual (kWh)

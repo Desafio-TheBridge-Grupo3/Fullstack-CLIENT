@@ -6,7 +6,7 @@ const Franja = () => {
     <>
       <section className="spare">
       <h2 className="hidden">Spare</h2>
-        <table className="tablas">
+        <table className="subtablas">
           <th className="th1">Franja</th>
           <tr>
             <td>P1</td>

@@ -7,8 +7,8 @@ import TablaCliente from './TablaCliente'
 const Main = () => {
   return (
     <>
-      <TablaSeveral/>
-      <TablaCliente/>
+      <TablaCliente />
+      <TablaSeveral />
       {/* <Oferta/> */}
     </>
   )

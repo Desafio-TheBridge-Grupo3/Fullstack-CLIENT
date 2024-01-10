@@ -3,9 +3,9 @@ import React from "react";
 const SPotencia = () => {
   return (
     <> 
-    <section className="enpt">
+    <section className="propenpt">
       <h2>Potencia</h2>
-    <table className="tablas">
+    <table className="subtablas">
       <tr>
         <th className="th1">Potencia facturada (kW)
 </th>

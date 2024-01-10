@@ -1,6 +1,6 @@
 @import '../utils/variables.scss';
 
-.tabla1 {
+.tabla {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
@@ -37,7 +37,7 @@ h2 {
     background: var(--common-surface-default, $white);
 }
 
-.tablas {
+.subtablas {
     display: flex;
     padding: 24px;
     flex-direction: column;

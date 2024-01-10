@@ -17,7 +17,7 @@ const TablaCliente = () => {
 
           </select>
         </article>
-        <article className="tabla1">
+        <article className="tabla">
           <Franja />
           <Energia />
           <Potencia />

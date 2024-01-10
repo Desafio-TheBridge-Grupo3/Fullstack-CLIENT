@@ -5,7 +5,7 @@ const Potencia = () => {
     <> 
     <section className="enpt">
       <h2>Potencia</h2>
-    <table className="tablas">
+    <table className="subtablas">
       <tr>
         <th className="th1">Potencia facturada (kW)
 </th>

@@ -9,7 +9,7 @@ const TablaSeveral = () => {
       <section>
         <h1 className="tituloTabla">Propuesta Several</h1>
     
-        <article className="tabla1">
+        <article className="tabla">
           <SFranja />
           <SEnergia />
           <SPotencia />
