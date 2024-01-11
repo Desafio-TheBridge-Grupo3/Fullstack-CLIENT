@@ -49,6 +49,10 @@ h2 {
     grid-column-gap: 10px;
     border-spacing: 8px 0;
 }
+tbody{
+    grid-column-gap: 10px;
+    display: contents;
+}
 
 td {
     max-width: 70px;
