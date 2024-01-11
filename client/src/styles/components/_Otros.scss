@@ -31,8 +31,39 @@ max-width: 733px;
 .subseccion{
     display: flex;
 width: 2640px;
-justify-content: flex-end;
+justify-content:space-evenly;
 align-items: flex-start;
+justify-self: end;
 gap: 36px;
 flex-shrink: 0;
+}
+
+.resultadosTotales{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top:50px;
+}
+
+.totfac{
+    display: flex;
+width: 320px;
+height: 56px;
+padding: 8px;
+align-items: center;
+margin: 8px;
+border-radius: 4px;
+background: var(--several-principal-80, $red);
+color: $white;
+}
+
+.totan{
+    display: flex;
+width: 320px;
+height: 56px;
+padding: 8px;
+align-items: center;
+margin: 8px;
+border-radius: 4px;
+background: var(--several-principal-100, $heavy);
+color: $white;
 }
