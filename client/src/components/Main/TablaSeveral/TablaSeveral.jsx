@@ -3,7 +3,8 @@ import Franja from '../TablaCliente/Franja';
 import SEnergia from './SEnergia';
 import SPotencia from './SPotencia';
 import Form from './Form';
-import Otros from "../TablaSeveral/Otros"
+import Otros from "./Otros";
+import STotal from './STotal';
 
 const TablaSeveral = () => {
   return (
@@ -18,6 +19,7 @@ const TablaSeveral = () => {
         </article>
         <article className="subseccion">
         <Otros />
+        <STotal/>
         </article>
       </section>
     </>

@@ -1,39 +1,31 @@
 import React from "react";
-import { useForm } from "react-hook-form"
 
 const Otros = () => {
 
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm()
-
-  const onSubmit = (data) => console.log(data)
+ 
 
 
   return(
     <>
     <article className="otros">
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-     <label htmlFor="impuesto">Impuesto eléctrico</label>
-     </div>
-     <input type="text" name="impuesto" placeholder="texto"/>
+    <article >
+      
+     <p>Impuesto eléctrico</p>
+     
+     <input placeholder="--"disabled/>
 
-     <div>
-     <label htmlFor="otros">Otros conceptos</label>
-     </div>
-     <input type="text" name="otros" placeholder="texto"/>
+     
+     <p>Otros conceptos</p>
+     
+     <input placeholder="--" disabled/>
 
-     <div>
-     <label htmlFor="otrosAnual">Otros conceptos anual</label>
-     </div>
-     <input type="text" name="otrosAnual" placeholder="texto"/>
+     
+     <p >Otros conceptos anual</p>
+     
+     <input placeholder="--"disabled/>
 
-      <input type="submit" />
-    </form>
+      
+    </article>
     </article>
     </>
   );
