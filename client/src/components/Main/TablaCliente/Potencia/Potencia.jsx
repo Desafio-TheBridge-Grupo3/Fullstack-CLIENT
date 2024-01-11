@@ -1,5 +1,4 @@
 import React from "react";
-import { useForm } from "react-hook-form"
 
 
 const Potencia = () => {
@@ -24,57 +23,57 @@ const Potencia = () => {
         <td><input type="number" /></td>
         <td><input type="number" /></td>
         <td><input type="number" /></td>
-        <td className="total"><input className="total" type="number" /></td>
-        <td className="total"><input className="total" type="number" /></td>
-        <td className="total"><input className="total" type="number" /></td>
+        <td className="total"></td>
+        <td className="total"></td>
+        <td className="total"></td>
       </tr>
       <tr>
         <td><input type="number" /></td>
         <td><input type="number" /></td>
         <td><input type="number" /></td>
-        <td className="total"><input className="total" type="number" /></td>
-        <td className="total"><input className="total" type="number" /></td>
-        <td className="total"><input className="total" type="number" /></td>
+        <td className="total"></td>
+        <td className="total"></td>
+        <td className="total"></td>
       </tr>
       <tr>
         <td><input type="number" /></td>
         <td><input type="number" /></td>
         <td><input type="number" /></td>
-        <td className="total"><input className="total" type="number" /></td>
-        <td className="total"><input className="total" type="number" /></td>
-        <td className="total"><input className="total" type="number" /></td>
+        <td className="total"></td>
+        <td className="total"></td>
+        <td className="total"></td>
       </tr>
       <tr>
         <td><input type="number" /></td>
         <td><input type="number" /></td>
         <td><input type="number" /></td>
-        <td className="total"><input className="total" type="number" /></td>
-        <td className="total"><input className="total" type="number" /></td>
-        <td className="total"><input className="total" type="number" /></td>
+        <td className="total"></td>
+        <td className="total"></td>
+        <td className="total"></td>
       </tr>
       <tr>
         <td><input type="number" /></td>
         <td><input type="number" /></td>
         <td><input type="number" /></td>
-        <td className="total"><input className="total" type="number" /></td>
-        <td className="total"><input className="total" type="number" /></td>
-        <td className="total"><input className="total" type="number" /></td>
+        <td className="total"></td>
+        <td className="total"></td>
+        <td className="total"></td>
       </tr>
       <tr>
         <td><input type="number" /></td>
         <td><input type="number" /></td>
         <td><input type="number" /></td>
-        <td className="total"><input className="total" type="number" /></td>
-        <td className="total"><input className="total" type="number" /></td>
-        <td className="total"><input className="total" type="number" /></td>
+        <td className="total"></td>
+        <td className="total"></td>
+        <td className="total"></td>
       </tr>
       <tr>
-        <td className="hidden"><input type="number" /></td>
-        <td className="hidden"><input type="number" /></td>
-        <td className="hidden"><input type="number" /></td>
-        <td className="hidden"><input type="number" /></td>
-        <td className="total"><input className="total" type="number" /></td>
-        <td className="total"><input className="total" type="number" /></td>
+        <td className="hidden"></td>
+        <td className="hidden"></td>
+        <td className="hidden"></td>
+        <td className="hidden"></td>
+        <td className="total"></td>
+        <td className="total"></td>
       </tr>
     </table>
     </section>
