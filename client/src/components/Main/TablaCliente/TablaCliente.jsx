@@ -2,7 +2,6 @@ import React from "react";
 import Franja from "./Franja"
 import Energia from "./Energia"
 import Potencia from "./Potencia"
-import Otros from "./Otros"
 
 const TablaCliente = () => {
   return (
@@ -22,7 +21,7 @@ const TablaCliente = () => {
           <Franja />
           <Energia />
           <Potencia />
-          <Otros />
+          
         </article>
         
       </section>

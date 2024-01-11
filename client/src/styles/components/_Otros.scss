@@ -17,7 +17,22 @@
         width: 160px;
         padding: 8px;
         align-items: center;
-        gap: 8px;
+        margin: 8px;
     }
     
+}
+.otros>form{
+    display: flex;
+align-items: flex-start;
+margin: 61px;
+max-width: 733px;
+}
+
+.subseccion{
+    display: flex;
+width: 2640px;
+justify-content: flex-end;
+align-items: flex-start;
+gap: 36px;
+flex-shrink: 0;
 }
