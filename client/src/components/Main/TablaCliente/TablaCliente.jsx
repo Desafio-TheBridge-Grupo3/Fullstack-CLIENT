@@ -1,16 +1,61 @@
 import React from "react";
+import { useState } from "react";
 import Franja from "./Franja"
 import Energia from "./Energia"
 import Potencia from "./Potencia"
 import Total from './Total'
 import COtros from './COtros'
+import { EnergiaContext } from "../../../context/EnergiaContext";
 
 const TablaCliente = () => {
+  const [totalesEnergia, setTotalesEnergia] = useState(
+    {
+    consumoAnual:{
+      P1:0,
+      P2:0,
+      P3:0,
+      P4:0,
+      P5:0,
+      P6:0
+    },
+    consumoActual:{
+      P1:0,
+      P2:0,
+      P3:0,
+      P4:0,
+      P5:0,
+      P6:0
+    },
+    totalFactura:{
+      P1:0,
+      P2:0,
+      P3:0,
+      P4:0,
+      P5:0,
+      P6:0
+    },
+    totalAnual:{
+      P1:0,
+      P2:0,
+      P3:0,
+      P4:0,
+      P5:0,
+      P6:0
+    }
+});
+
+const updateTotalesEnergia = (newTotalesEnergia) => {
+  setTotalesEnergia(newTotalesEnergia);
+};
+
+
+const energiaData = { totalesEnergia, updateTotalesEnergia }
+
   return (
     <>
       <section className="tablaGrande">
-      <article className="compañia" >
-        <h1 className="tituloTabla">Compañía actual</h1>
+        <article className="compañia" >
+          <h1 className="tituloTabla">Compañía actual</h1>
           <select name="compañia" id="compañia">
             <option value="endesa">Endesa</option>
             <option value="iberdrola">Iberdrola</option>
@@ -21,14 +66,16 @@ const TablaCliente = () => {
 
         <article className="tabla">
           <Franja />
-          <Energia />
+          <EnergiaContext.Provider value={energiaData}>
+            <Energia />
+          </EnergiaContext.Provider>
           <Potencia />
         </article>
         <article className="subseccion">
-        <COtros/>
-        <Total/>
+          <COtros />
+          <Total />
         </article>
-        
+
       </section>
     </>
   )

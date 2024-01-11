@@ -51,7 +51,8 @@ h2 {
 }
 
 td {
-    width: 70px;
+    max-width: 70px;
+    min-width:70px;
     padding: 8px;
     align-items: center;
     gap: 8px;

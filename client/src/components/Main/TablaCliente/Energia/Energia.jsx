@@ -1,7 +1,14 @@
+import { useContext } from 'react';
 import React from "react";
+import TR from '../../TR'
+import { EnergiaContext } from '../../../../context/EnergiaContext';
 
 
 const Energia = () => {
+
+  const { totalesEnergia} = useContext(EnergiaContext);
+
+
   return (
     <>
     <section className="enpt">
@@ -23,75 +30,22 @@ const Energia = () => {
           <th className="th1">Total pago anual
           </th>
         </tr>
+        <TR periodo={"P1"}/>
+        <TR periodo={"P2"}/>
+        <TR periodo={"P3"}/>
+        <TR periodo={"P4"}/>
+        <TR periodo={"P5"}/>
+        <TR periodo={"P6"}/>
+        
         <tr>
-          <td><input type="number" /></td>
-          <td><input type="number" /></td>
-          <td><input type="number" /></td>
-          <td><input type="number" /></td>
-          <td><input type="number" /></td>
-          <td className="total"></td>
-          <td className="total"></td>
-          <td className="total"></td>
-        </tr>
-        <tr>
-          <td><input type="number" /></td>
-          <td><input type="number" /></td>
-          <td><input type="number" /></td>
-          <td><input type="number" /></td>
-          <td><input type="number" /></td>
-          <td className="total"></td>
-          <td className="total"></td>
-          <td className="total"></td>
-        </tr>
-        <tr>
-          <td><input type="number" /></td>
-          <td><input type="number" /></td>
-          <td><input type="number" /></td>
-          <td><input type="number" /></td>
-          <td><input type="number" /></td>
-          <td className="total"></td>
-          <td className="total"></td>
-          <td className="total"></td>
-        </tr>
-        <tr>
-          <td><input type="number" /></td>
-          <td><input type="number" /></td>
-          <td><input type="number" /></td>
-          <td><input type="number" /></td>
-          <td><input type="number" /></td>
-          <td className="total"></td>
-          <td className="total"></td>
-          <td className="total"></td>
-        </tr>
-        <tr>
-          <td><input type="number" /></td>
-          <td><input type="number" /></td>
-          <td><input type="number" /></td>
-          <td><input type="number" /></td>
-          <td><input type="number" /></td>
-          <td className="total"></td>
-          <td className="total"></td>
-          <td className="total"></td>
-        </tr>
-        <tr>
-          <td><input type="number" /></td>
-          <td><input type="number" /></td>
-          <td><input type="number" /></td>
-          <td><input type="number" /></td>
-          <td><input type="number" /></td>
-          <td className="total"></td>
-          <td className="total"></td>
-          <td className="total"></td>
-        </tr>
-        <tr>
-          <td className="total"></td>
-          <td className="total"></td>
+          <td className="total"><input type="number" disabled value={Object.values(totalesEnergia.consumoAnual).reduce((a,b) => a+b)}/></td>
+          <td className="total"><input type="number" disabled value={Object.values(totalesEnergia.consumoActual).reduce((a,b) => a+b)}/></td>
           <td className="hidden"></td>
           <td className="hidden"></td>
           <td className="hidden"></td>
           <td className="hidden"></td>
-          <td className="total"></td>
-          <td className="total"></td>
+          <td className="total"><input type="number" disabled value={Object.values(totalesEnergia.totalFactura).reduce((a,b) => a+b)}/></td>
+          <td className="total"><input type="number" disabled value={Object.values(totalesEnergia.totalAnual).reduce((a,b) => a+b)}/></td>
         </tr>
       </table>
       </section>
