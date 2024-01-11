@@ -32,7 +32,7 @@ const Otros = () => {
      </div>
      <input type="text" name="otrosAnual" placeholder="texto"/>
 
-      <input type="submit" />
+      
     </form>
     </article>
     </>

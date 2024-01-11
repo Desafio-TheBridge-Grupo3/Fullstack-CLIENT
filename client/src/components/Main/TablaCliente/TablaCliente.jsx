@@ -2,6 +2,8 @@ import React from "react";
 import Franja from "./Franja"
 import Energia from "./Energia"
 import Potencia from "./Potencia"
+import Total from './Total'
+import COtros from './COtros'
 
 const TablaCliente = () => {
   return (
@@ -21,7 +23,10 @@ const TablaCliente = () => {
           <Franja />
           <Energia />
           <Potencia />
-          
+        </article>
+        <article className="subseccion">
+        <COtros/>
+        <Total/>
         </article>
         
       </section>
