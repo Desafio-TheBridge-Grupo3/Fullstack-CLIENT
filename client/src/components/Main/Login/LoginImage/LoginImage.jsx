@@ -4,7 +4,7 @@ const LoginImage = () => {
   return (
     <>
     <section >
-      <img src="./img/loginImage.jpeg" className="severalImage"/>
+      <img src="./img/loginImage.png" className="severalImage"/>
     </section>
     </>
   );
