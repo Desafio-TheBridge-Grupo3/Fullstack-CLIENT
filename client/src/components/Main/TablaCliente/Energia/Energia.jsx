@@ -23,7 +23,7 @@ const Energia = () => {
           </th>
           <th className="th1">Precio energía activa mes de facturación (€/kWh)
           </th>
-          <th className="th1">Descuento</th>
+          <th className="th1">Descuento en %</th>
           <th className="th1">Precio con descuento
           </th>
           <th className="th1">Total pago en factura

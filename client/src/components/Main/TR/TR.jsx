@@ -82,11 +82,11 @@ const TR = ({ periodo }) => {
 
   return (
     <tr>
-      <td><input placeholder="0" type="number" value={consumoAnual} onChange={(e) => update(e, setConsumoAnual)} /></td>
-      <td><input placeholder="0" type="number" value={consumoActual} onChange={(e) => update(e, setConsumoActual)} /></td>
-      <td><input placeholder="0" type="number" value={preciosAnual} onChange={(e) => update(e, setPreciosAnual)} /></td>
-      <td><input placeholder="0" type="number" value={preciosFacturacion} onChange={(e) => update(e, setPreciosFacturacion)} /></td>
-      <td><input placeholder="0" type="number" value={descuento} onChange={(e) => update(e, setDescuento)} /></td>
+      <td><input placeholder="--" type="number" value={consumoAnual} onChange={(e) => update(e, setConsumoAnual)} /></td>
+      <td><input placeholder="--" type="number" value={consumoActual} onChange={(e) => update(e, setConsumoActual)} /></td>
+      <td><input placeholder="--" type="number" value={preciosAnual} onChange={(e) => update(e, setPreciosAnual)} /></td>
+      <td><input placeholder="--" type="number" value={preciosFacturacion} onChange={(e) => update(e, setPreciosFacturacion)} /></td>
+      <td><input placeholder="--" type="number" value={descuento} onChange={(e) => update(e, setDescuento)} /></td>
       <td className="total"><input type="number" disabled value={precioConDescuento}/></td>
       <td className="total"><input type="number" disabled value={totalPagoFactura}/></td>
       <td className="total"><input type="number" disabled value={totalPagoAnual}/></td>

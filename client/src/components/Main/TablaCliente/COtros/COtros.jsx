@@ -7,12 +7,12 @@ const COtros = () => {
     <article className="cotros">
       
      <p>Días Facturación</p>
-     <input placeholder="--" type="number"/>
+     <input value={30} type="number"/>
 
      <p>Energía reactiva</p>
      <input placeholder="--" type="number"/>
 
-     <p>Impuesto eléctrico</p>
+     <p>Impuesto eléctrico (en %)</p>
      <input placeholder="--" type="number"/>
 
      <p>Alquiler equipo</p>

@@ -21,7 +21,7 @@ const {totalesPotencia} = useContext(PotenciaContextC);
               </th>
               <th className="th1">Precios potencia (€/kWh/dia)
               </th>
-              <th className="th1">Descuento</th>
+              <th className="th1">Descuento en %</th>
               <th className="th1">Precio con Descuento</th>
               <th className="th1">Total Pago en Factura
               </th>
