@@ -1,6 +1,13 @@
 import React from "react";
+import { useContext } from "react";
+import TRPS from "../../TRPS/TRPS";
+import { PropuestaPotenciaContext } from '../../../../context/PropuestaPotenciaContext'
 
 const SPotencia = () => {
+
+  const { totalesPotencia } = useContext(PropuestaPotenciaContext);
+
+
   return (
     <>
       <section className="propenpt">
@@ -22,71 +29,22 @@ const SPotencia = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td className="total"></td>
-              <td className="total"></td>
-              <td className="total"></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td className="total"></td>
-              <td className="total"></td>
-              <td className="total"></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td className="total"></td>
-              <td className="total"></td>
-              <td className="total"></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td className="total"></td>
-              <td className="total"></td>
-              <td className="total"></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td className="total"></td>
-              <td className="total"></td>
-              <td className="total"></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td className="total"></td>
-              <td className="total"></td>
-              <td className="total"></td>
-            </tr>
-
+            <TRPS periodo={"P1"} />
+            <TRPS periodo={"P2"} />
+            <TRPS periodo={"P3"} />
+            <TRPS periodo={"P4"} />
+            <TRPS periodo={"P5"} />
+            <TRPS periodo={"P6"} />
           </tbody>
           <tfoot>
-            <tr>
+          <tr>
               <td className="hidden"></td>
               <td className="hidden"></td>
               <td className="hidden"></td>
               <td className="hidden"></td>
               <td className="hidden"></td>
-              <td className="total"></td>
-              <td className="total"></td>
+              <td className="total"><input type="number" disabled value={Object.values(totalesPotencia.totalFacturaP).reduce((a,b) => a+b)}/></td>
+              <td className="total"><input type="number" disabled value={Object.values(totalesPotencia.totalAnualP).reduce((a,b) => a+b)}/></td>
             </tr>
           </tfoot>
         </table>

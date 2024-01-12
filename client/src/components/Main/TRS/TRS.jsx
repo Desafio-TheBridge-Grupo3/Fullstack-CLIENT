@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useContext } from 'react';
-import { EnergiaContext } from "../../../context/EnergiaContext";
+import { PropuestaEnergiaContext } from "../../../context/PropuestaEnergiaContext";
 
-const TR = ({ periodo }) => {
+const TRS = ({ periodo }) => {
 
   const [consumoAnual, setConsumoAnual] = useState([])
   const [consumoActual, setConsumoActual] = useState([])
@@ -13,30 +13,23 @@ const TR = ({ periodo }) => {
   const [totalPagoFactura, setTotalPagoFactura] = useState([])
   const [totalPagoAnual, setTotalPagoAnual] = useState([])
 
-
   const update = (event, setter) => {
     setter(Number(event.target.value))
   }
 
-  const { totalesEnergia, updateTotalesEnergia } = useContext(EnergiaContext);
+  const { totalesEnergia, updateTotalesEnergia } = useContext(PropuestaEnergiaContext);
 
   //multiplicaciones en fila
   useEffect(() => {
-    setPrecioConDescuento(preciosFacturacion - (preciosFacturacion * (descuento / 100)))
-  }, [preciosFacturacion, descuento])
-
-
-  useEffect(() => {
-    setTotalPagoAnual(preciosAnual * consumoAnual * (1 - descuento / 100))
-  }, [consumoAnual, preciosAnual, descuento])
+    setTotalPagoAnual(preciosAnual * consumoAnual )
+  }, [consumoAnual, preciosAnual])
 
   useEffect(() => {
-    setTotalPagoFactura(consumoActual*precioConDescuento)
+    setTotalPagoFactura(consumoActual * precioConDescuento)
   }, [consumoActual, precioConDescuento])
 
 
-
-//sumas en columna
+  //sumas en columna
   useEffect(() => {
     const sumar = {
       ...totalesEnergia.consumoAnual
@@ -78,20 +71,18 @@ const TR = ({ periodo }) => {
   }, [totalPagoAnual])
 
 
-
-
   return (
     <tr>
       <td><input placeholder="--" type="number" value={consumoAnual} onChange={(e) => update(e, setConsumoAnual)} /></td>
       <td><input placeholder="--" type="number" value={consumoActual} onChange={(e) => update(e, setConsumoActual)} /></td>
-      <td><input placeholder="--" type="number" value={preciosAnual} onChange={(e) => update(e, setPreciosAnual)} />€</td>
-      <td><input placeholder="--" type="number" value={preciosFacturacion} onChange={(e) => update(e, setPreciosFacturacion)} />€</td>
-      <td><input placeholder="--" type="number" value={descuento} onChange={(e) => update(e, setDescuento)} />%</td>
-      <td className="total"><input type="number" disabled value={precioConDescuento}/></td>
-      <td className="total"><input type="number" disabled value={totalPagoFactura}/></td>
-      <td className="total"><input type="number" disabled value={totalPagoAnual}/></td>
+      <td className="disabled"><input  type="number" value={preciosAnual} disabled />€</td>
+      <td className="disabled"><input type="number" value={preciosFacturacion} disabled />€</td>
+      <td className="disabled"><input type="number"  placeholder="--" value={descuento} disabled/></td>
+      <td className="total"><input type="number" disabled value={precioConDescuento} />€</td>
+      <td className="total"><input type="number" disabled value={totalPagoFactura} />€</td>
+      <td className="total"><input type="number" disabled value={totalPagoAnual} />€</td>
     </tr>
   );
 };
 
-export default TR;
+export default TRS;
