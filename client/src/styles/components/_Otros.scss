@@ -1,13 +1,14 @@
 @import '../utils/variables.scss';
 
 .otros {
-    &>form>p, input {
+    &>article>p, input {
         display: flex;
         width: 160px;
         padding: 8px;
         align-items: center;
         margin: 8px;
         border-radius: 4px;
+        flex-direction: row;
     } 
 }
 
@@ -18,13 +19,23 @@ margin: 61px;
 max-width: 733px;
 }
 
+.cotros{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+
+
 .subseccion{
     display: flex;
-justify-content:space-evenly;
-align-items: flex-start;
-justify-self: end;
-gap: 36px;
-margin-left: 75px;
+    justify-content: space-between;
+    align-items: center;
+    justify-self: end;
+    gap: 36px;
+    margin-left: 75px;
+    width: 1335.62px;
 }
 
 .resultadosTotales{
@@ -32,6 +43,7 @@ margin-left: 75px;
     grid-template-columns: repeat(2, 1fr);
     margin-top:50px;
 }
+
 
 .totfac{
     display: flex;

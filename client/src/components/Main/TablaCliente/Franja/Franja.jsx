@@ -7,7 +7,10 @@ const Franja = () => {
       <section className="spare">
       <h2 className="hidden">Spare</h2>
         <table className="subtablas">
+          <thead>
           <th className="th1">Franja</th>
+          </thead>
+          <tbody>
           <tr>
             <td className="white">P1</td>
           </tr>
@@ -26,9 +29,12 @@ const Franja = () => {
           <tr>
             <td className="white">P6</td>
           </tr>
+          </tbody>
+          <tfoot>
           <tr>
             <td className="white">TOTAL</td>
           </tr>
+          </tfoot>
         </table>
       </section>
     </>

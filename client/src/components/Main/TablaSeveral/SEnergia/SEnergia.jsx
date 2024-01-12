@@ -6,6 +6,7 @@ const SEnergia = () => {
     <section className="propenpt">
       <h2>Energía</h2>
       <table className="subtablas">
+      <thead>
         <tr>
           <th className="th1">Consumo anual (kWh)</th>
           <th className="th1">Consumo factura actual (kWh)
@@ -22,6 +23,8 @@ const SEnergia = () => {
           <th className="th1">Total pago anual
           </th>
         </tr>
+        </thead>
+        <tbody>
         <tr>
           <td></td>
           <td></td>
@@ -82,6 +85,8 @@ const SEnergia = () => {
           <td className="total"></td>
           <td className="total"></td>
         </tr>
+        </tbody>
+        <tfoot>
         <tr>
           <td className="total"></td>
           <td className="total"></td>
@@ -92,6 +97,7 @@ const SEnergia = () => {
           <td className="total"></td>
           <td className="total"></td>
         </tr>
+        </tfoot>
       </table>
       </section>
     </>

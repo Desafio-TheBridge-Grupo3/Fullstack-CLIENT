@@ -12,6 +12,7 @@
     display: grid;
     max-width: 1388px;
     margin-left: 70px;
+    background-color: $background;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -27,5 +28,6 @@ input[type=number] {
  }
 
  input[type=number]:disabled{
-    cursor:default
+    cursor:default;
+    background-color: $total;
  }

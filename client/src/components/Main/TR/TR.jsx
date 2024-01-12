@@ -20,8 +20,7 @@ const TR = ({ periodo }) => {
 
   const { totalesEnergia, updateTotalesEnergia } = useContext(EnergiaContext);
 
-
-
+  //multiplicaciones en fila
   useEffect(() => {
     setPrecioConDescuento(preciosFacturacion - (preciosFacturacion * (descuento / 100)))
   }, [preciosFacturacion, descuento])
@@ -37,7 +36,7 @@ const TR = ({ periodo }) => {
 
 
 
-
+//sumas en columna
   useEffect(() => {
     const sumar = {
       ...totalesEnergia.consumoAnual

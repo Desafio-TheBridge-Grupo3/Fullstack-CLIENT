@@ -6,8 +6,11 @@ import Potencia from "./Potencia"
 import Total from './Total'
 import COtros from './COtros'
 import { EnergiaContext } from "../../../context/EnergiaContext";
+import { PotenciaContextC } from "../../../context/PotenciaContextC"
 
 const TablaCliente = () => {
+
+
   const [totalesEnergia, setTotalesEnergia] = useState(
     {
     consumoAnual:{
@@ -44,12 +47,40 @@ const TablaCliente = () => {
     }
 });
 
+
 const updateTotalesEnergia = (newTotalesEnergia) => {
   setTotalesEnergia(newTotalesEnergia);
 };
 
 
+const [totalesPotencia, setTotalesPotencia] = useState(
+  {
+  
+  totalFacturaP:{
+    P1:0,
+    P2:0,
+    P3:0,
+    P4:0,
+    P5:0,
+    P6:0
+  },
+  totalAnualP:{
+    P1:0,
+    P2:0,
+    P3:0,
+    P4:0,
+    P5:0,
+    P6:0
+  }
+});
+
+const updateTotalesPotencia = (newTotalesPotencia) => {
+  setTotalesPotencia(newTotalesPotencia);
+};
+
+
 const energiaData = { totalesEnergia, updateTotalesEnergia }
+const potenciaData = { totalesPotencia, updateTotalesPotencia }
 
   return (
     <>
@@ -69,7 +100,9 @@ const energiaData = { totalesEnergia, updateTotalesEnergia }
           <EnergiaContext.Provider value={energiaData}>
             <Energia />
           </EnergiaContext.Provider>
+          <PotenciaContextC.Provider value={potenciaData}>
           <Potencia />
+          </PotenciaContextC.Provider>
         </article>
         <article className="subseccion">
           <COtros />
