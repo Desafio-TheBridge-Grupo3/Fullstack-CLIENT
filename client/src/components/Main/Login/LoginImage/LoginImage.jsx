@@ -1,7 +1,13 @@
 import React from "react";
 
 const LoginImage = () => {
-  return <div>LoginImage</div>;
+  return (
+    <>
+    <section >
+      <img src="./img/loginImage.jpeg" className="severalImage"/>
+    </section>
+    </>
+  );
 };
 
 export default LoginImage;
