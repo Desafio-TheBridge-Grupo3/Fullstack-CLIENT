@@ -60,10 +60,10 @@ useEffect(() => {
 
   return (
     <tr>
-        <td><input type="number" placeholder="0" value={potenciaContratada} onChange={(e) => update(e, setPotenciaContratada)} /></td>
-        <td><input type="number" placeholder="0" value={potenciaFacturada} onChange={(e) => update(e, setPotenciaFacturada)} /></td>
-        <td><input type="number" placeholder="0" value={precioPotencia} onChange={(e) => update(e, setPrecioPotencia)} /></td>
-        <td><input type="number" placeholder="0" value={descuento} onChange={(e) => update(e, setDescuento)} /></td>
+        <td><input type="number"  placeholder="--" value={potenciaContratada} onChange={(e) => update(e, setPotenciaContratada)} /></td>
+        <td><input type="number" placeholder="--" value={potenciaFacturada} onChange={(e) => update(e, setPotenciaFacturada)} /></td>
+        <td><input type="number" placeholder="--" value={precioPotencia} onChange={(e) => update(e, setPrecioPotencia)} /></td>
+        <td><input type="number" placeholder="--" value={descuento} onChange={(e) => update(e, setDescuento)} /></td>
         <td className="total"><input type="number" disabled value={precioConDescuento}/></td>
       <td className="total"><input type="number" disabled value={totalPagoFactura}/></td>
       <td className="total"><input type="number" disabled value={totalPagoAnual}/></td>

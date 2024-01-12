@@ -1,6 +1,12 @@
 import React from "react";
+import { useContext } from "react";
+import TRS from "../../TRS/TRS";
+import { PropuestaEnergiaContext } from "../../../../context/PropuestaEnergiaContext";
 
 const SEnergia = () => {
+
+  const { totalesEnergia} = useContext(PropuestaEnergiaContext);
+
   return (
     <>
     <section className="propenpt">
@@ -25,77 +31,23 @@ const SEnergia = () => {
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td className="total"></td>
-          <td className="total"></td>
-          <td className="total"></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td className="total"></td>
-          <td className="total"></td>
-          <td className="total"></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td className="total"></td>
-          <td className="total"></td>
-          <td className="total"></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td className="total"></td>
-          <td className="total"></td>
-          <td className="total"></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td className="total"></td>
-          <td className="total"></td>
-          <td className="total"></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td className="total"></td>
-          <td className="total"></td>
-          <td className="total"></td>
-        </tr>
+        <TRS periodo={"P1"}/>
+        <TRS periodo={"P2"}/>
+        <TRS periodo={"P3"}/>
+        <TRS periodo={"P4"}/>
+        <TRS periodo={"P5"}/>
+        <TRS periodo={"P6"}/>
         </tbody>
         <tfoot>
         <tr>
-          <td className="total"></td>
-          <td className="total"></td>
+          <td className="total"><input type="number" disabled value={Object.values(totalesEnergia.consumoAnual).reduce((a,b) => a+b)}/></td>
+          <td className="total"><input type="number" disabled value={Object.values(totalesEnergia.consumoActual).reduce((a,b) => a+b)}/></td>
           <td className="hidden"></td>
           <td className="hidden"></td>
           <td className="hidden"></td>
           <td className="hidden"></td>
-          <td className="total"></td>
-          <td className="total"></td>
+          <td className="total"><input type="number" disabled value={Object.values(totalesEnergia.totalFactura).reduce((a,b) => a+b)}/></td>
+          <td className="total"><input type="number" disabled value={Object.values(totalesEnergia.totalAnual).reduce((a,b) => a+b)}/></td>
         </tr>
         </tfoot>
       </table>

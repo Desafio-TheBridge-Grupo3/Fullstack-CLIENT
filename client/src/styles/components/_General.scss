@@ -27,7 +27,9 @@ input[type=number] {
     cursor: pointer;
  }
 
- input[type=number]:disabled{
+ input[type=number]:disabled, .disabled{
     cursor:default;
     background-color: $total;
  }
+
+ 
