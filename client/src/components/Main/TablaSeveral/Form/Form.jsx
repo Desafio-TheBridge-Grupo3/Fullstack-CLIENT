@@ -22,7 +22,6 @@ const Form = () => {
           <label htmlFor="tipo">Tipo de sistema</label>
         </div>
         <select name="tipo" id="tipo" className="select">
-          <option value="null"></option>
           <option value="peninsula">Península</option>
           <option value="baleares">Baleares</option>
           <option value="canarias">Canarias</option>
@@ -32,10 +31,9 @@ const Form = () => {
 
       <article>
         <div className="label">
-          <label htmlFor="tarifa">Tipo de sistema</label>
+          <label htmlFor="tarifa">Tarifa</label>
         </div>
         <select name="tarifa" id="tarifa" className="select">
-        <option value="null"></option>
           <option value="20">2.0TD</option>
           <option value="30">3.0TD</option>
           <option value="61">6.1TD</option>
@@ -45,10 +43,9 @@ const Form = () => {
 
       <article>
         <div className="label">
-          <label htmlFor="cia">Tipo de sistema</label>
+          <label htmlFor="cia">CIA</label>
         </div>
         <select name="cia" id="cia" className="select">
-        <option value="null"></option>
           <option value="acciona">ACCIONA</option>
           <option value="adi">ADI</option>
           <option value="aeq">AEQ</option>
@@ -70,10 +67,9 @@ const Form = () => {
 
       <article>
         <div className="label">
-          <label htmlFor="metodo">Tipo de sistema</label>
+          <label htmlFor="metodo">Método</label>
         </div>
         <select name="metodo" id="metodo" className="select">
-        <option value="null"></option>
           <option value="indexado">INDEXADO</option>
           <option value="fijo">FIJO</option>
         </select>
@@ -84,7 +80,6 @@ const Form = () => {
           <label htmlFor="productos">Producto CIA (POT)</label>
         </div>
         <select name="productos" id="productos" className="select">
-        <option value="null"></option>
           <option value="armonia">ARMONÍA</option>
           <option value="equilibrio">EQUILIBRIO</option>
           <option value="simetria">SIMETRÍA</option>
@@ -93,10 +88,9 @@ const Form = () => {
 
       <article>
         <div className="label">
-          <label htmlFor="mes">Tipo de sistema</label>
+          <label htmlFor="mes">Mes de Facturación (Indexado)</label>
         </div>
         <select name="mes" id="mes" className="select">
-        <option value="null"></option>
           <option value="en">Enero</option>
           <option value="feb">Febrero</option>
           <option value="mar">Marzo</option>
@@ -114,10 +108,9 @@ const Form = () => {
 
       <article>
         <div className="label">
-          <label htmlFor="fee">Tipo de sistema</label>
+          <label htmlFor="fee">FEE (Energía)</label>
         </div>
         <select name="fee" id="fee" className="select">
-        <option value="null"></option>
         <option value="1.5">1.5 %</option>
         <option value="3">3 %</option>
         <option value="4">4 %</option>
