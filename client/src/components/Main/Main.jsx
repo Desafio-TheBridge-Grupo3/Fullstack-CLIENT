@@ -1,15 +1,18 @@
 import React from "react";
-import Oferta from './Oferta'
-import TablaSeveral from './TablaSeveral'
-import TablaCliente from './TablaCliente'
+import { Route, Routes, Navigate } from "react-router-dom"
+import Login from "./Login";
+import Home from "./Home";
 
 
 const Main = () => {
   return (
     <>
-      <TablaCliente />
-      <TablaSeveral />
-      {/* <Oferta/> */}
+    <main>
+    <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+      </Routes>
+    </main>
     </>
   )
 };

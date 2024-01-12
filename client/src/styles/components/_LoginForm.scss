@@ -1,0 +1,36 @@
+@import '../utils/variables.scss';
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.mb-3 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.loginTitle {
+  color: #000;
+  /* B1 */
+  font-family: Lato;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 56px; /* 116.667% */
+  letter-spacing: -0.96px;
+}
+
+#ingresar {
+  display: flex;
+  width: 384px;
+  height: 48px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  background-color: $red;
+}
