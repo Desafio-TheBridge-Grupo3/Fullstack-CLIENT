@@ -32,8 +32,8 @@ const TR = ({ periodo }) => {
   }, [consumoAnual, preciosAnual, descuento])
 
   useEffect(() => {
-    setTotalPagoFactura(consumoActual * preciosFacturacion * (1 - descuento / 100))
-  }, [consumoActual, preciosFacturacion, descuento])
+    setTotalPagoFactura(consumoActual*precioConDescuento)
+  }, [consumoActual, precioConDescuento])
 
 
 
