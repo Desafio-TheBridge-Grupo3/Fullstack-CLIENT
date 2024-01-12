@@ -10,8 +10,7 @@ const TablaSeveral = () => {
     <>
       <section className="tablaGrande">
         <h1 className="tituloTabla">Propuesta Several</h1>
-        <Form/>
-        <Charts/>
+        <Form/><Charts/>
         <article className="tabla">
           <Franja />
           <SEnergia />

@@ -1,0 +1,24 @@
+@import "../utils/variables.scss";
+
+#chartsComponent {
+  display: flex;
+  width: 1387.537px;
+  align-items: flex-end;
+  gap: 69.951px;
+}
+
+#actual {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.546px;
+}
+
+#anual {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.546px;
+}
