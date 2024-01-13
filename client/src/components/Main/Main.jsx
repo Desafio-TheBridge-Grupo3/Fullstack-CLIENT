@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Route, Routes, Navigate } from "react-router-dom"
 import Login from "./Login";
 import Home from "./Home";
+import { UserContext } from "../../context/UserContext"
+
 
 
 const Main = () => {
+
+  const { user } = useContext(UserContext);
+
   return (
     <>
     <main>
