@@ -9,7 +9,7 @@ const SEnergia = () => {
 
   return (
     <>
-    <section className="propenpt">
+    <section id="propEnergia">
       <h2>Energía</h2>
       <table className="subtablas">
       <thead>

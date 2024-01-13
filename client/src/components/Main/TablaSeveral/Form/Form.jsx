@@ -1,21 +1,13 @@
 import React from "react";
-import { useForm } from "react-hook-form"
 
 
 const Form = () => {
 
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm()
-
-  const onSubmit = (data) => console.log(data)
+  //lógica propuesta: En excel cuando el asesor cambia un valor del form ese el precio cambia y podemos hacer lo mismo y nos ahorramos una parte de código un poco rollo. Como por defecto sí o sí habrá valores en el formulario, se hace la primera llamada al back con esos valores y cada vez que se modifica alguno de los desplegables se hace una nueva llamada. No sé si eso podría saturar el sistema, pero ofreceríamos al cliente un producto mucho más parecido a lo que ya están usando...
 
   return (
 
-    <form className="options" onSubmit={handleSubmit(onSubmit)}>
+    <form className="options" >
 
       <article>
         <div className="label">
@@ -125,7 +117,7 @@ const Form = () => {
         </select>
       </article>
 
-      <button type="submit">Valorar propuesta</button>
+      
     </form>
   )
 };

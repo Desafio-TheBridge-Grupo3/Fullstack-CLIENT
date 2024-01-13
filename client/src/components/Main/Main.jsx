@@ -9,12 +9,14 @@ const Main = () => {
   const { toPDF, targetRef } = usePDF({filename: 'page.pdf'});
   return (
     <>
-      <button onClick={() => toPDF()}>Download PDF</button>
+    <main>
+      
       <div ref={targetRef}>
         <TablaCliente />
         <TablaSeveral />
       </div>
       {/* <Oferta/> */}
+      </main>
     </>
   )
 };

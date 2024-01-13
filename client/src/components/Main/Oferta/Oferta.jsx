@@ -10,6 +10,7 @@ const Oferta = () => {
        <div ref={targetRef}>
        Esto vendría a ser el componente en el que se renderizará la tabla de la oferta para el cliente. Es también lo que se va a convertir en pdf. Si le das al botón te convierte este div en un doc pdf.
        </div>
+       
     </div>
  )
   

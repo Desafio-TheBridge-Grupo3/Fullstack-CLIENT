@@ -4,32 +4,38 @@
 //     background-color: $background;
 // }
 
-.total{
+.total {
     background-color: $total;
 }
 
-.tablaGrande{
-    display: grid;
-    max-width: 1388px;
-    margin-left: 70px;
+.tablaGrande {
+    display: flex;
+    padding: 13.116px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 17.488px;
     background-color: $background;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 
 }
 
-input[type=number] { 
-    -moz-appearance:textfield;
+input[type=number] {
+    -moz-appearance: textfield;
     cursor: pointer;
- }
+}
 
- input[type=number]:disabled, .disabled{
-    cursor:default;
+input[type=number]:disabled,
+.disabled {
+    cursor: default;
     background-color: $total;
- }
+}
 
- 
+p{
+    color:$text;
+    
+}
