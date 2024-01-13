@@ -11,7 +11,7 @@ const {totalesPotencia} = useContext(PotenciaContextC);
 
   return (
     <>
-      <section className="enpt">
+      <section id="potencia">
         <h2>Potencia</h2>
         <table className="subtablas">
           <thead>

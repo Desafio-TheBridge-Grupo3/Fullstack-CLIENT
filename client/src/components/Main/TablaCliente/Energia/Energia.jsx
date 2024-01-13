@@ -11,7 +11,7 @@ const Energia = () => {
 
   return (
     <>
-    <section className="enpt">
+    <section id="energia">
       <h2>Energía</h2>
       <table className="subtablas">
         <thead>

@@ -1,7 +1,13 @@
 @import '../utils/variables.scss';
 
 .otros {
-    &>article>p, input {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    min-width: 401px;
+    max-width: 401px;
+
+    &>p,
+    input {
         display: flex;
         width: 160px;
         padding: 8px;
@@ -9,62 +15,51 @@
         margin: 8px;
         border-radius: 4px;
         flex-direction: row;
-    } 
+    }
 }
 
-.otros>article{
-    display: flex;
-align-items: flex-start;
-margin: 61px;
-max-width: 733px;
-}
 
-.cotros{
+
+.cotros {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     justify-items: center;
     align-items: center;
+    
 }
 
 
 
-.subseccion{
+.subseccion {
     display: flex;
-    justify-content: space-between;
+    padding: 0px 13.116px;
     align-items: center;
-    justify-self: end;
-    gap: 36px;
-    margin-left: 75px;
-    width: 1335.62px;
+    min-width: 1000px;
+    max-width: 1000px;
+    justify-content: space-between;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    text-align: end;
+    position: relative;
+    left: 320px;
 }
 
-.resultadosTotales{
+.resultadosTotales {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin-top:50px;
+    min-width: 235px;
+    max-width: 235px;
 }
 
 
-.totfac{
-    display: flex;
-width: 320px;
-height: 56px;
-padding: 8px;
-align-items: center;
-margin: 8px;
-border-radius: 4px;
-background: var(--several-principal-80, $red);
-color: $white;
+.totfac {
+    width: 200px;
+    color: $bright;
+    font-size: larger;
 }
 
-.totan{
-    display: flex;
-width: 320px;
-height: 56px;
-padding: 8px;
-align-items: center;
-margin: 8px;
-border-radius: 4px;
-background: var(--several-principal-100, $heavy);
-color: $white;
+.totan {
+    width: 200px;
+    color:$heavy;
+    font-size: larger;
 }

@@ -10,7 +10,7 @@ const SPotencia = () => {
 
   return (
     <>
-      <section className="propenpt">
+      <section id="propPotencia">
         <h2>Potencia</h2>
         <table className="subtablas">
           <thead>

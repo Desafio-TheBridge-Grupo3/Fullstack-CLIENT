@@ -6,7 +6,6 @@
 
 .spare {
         display: flex;
-        padding: 24px;
         flex-direction: column;
         align-items: flex-start;
         gap: 24px;
@@ -15,4 +14,12 @@
 
 .white {
         background-color: $white;
+}
+
+.franja{
+        display: flex;
+        padding: 13.116px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 13.116px;
 }
