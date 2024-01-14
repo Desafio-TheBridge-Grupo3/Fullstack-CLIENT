@@ -1,17 +1,16 @@
 import React from "react";
 import { useContext } from "react";
-import TRPC from "../../TRPC/TRPC";
-import { PotenciaContextC } from "../../../../context/PotenciaContextC";
+import TRPS from "../../../TRPS/TRPS";
+import { PropuestaPotenciaContext } from '../../../../../context/PropuestaPotenciaContext'
 
+const SPotencia = () => {
 
-const Potencia = () => {
-
-const {totalesPotencia} = useContext(PotenciaContextC);
+  const { totalesPotencia } = useContext(PropuestaPotenciaContext);
 
 
   return (
     <>
-      <section className="enpt">
+      <section className="propenpt">
         <h2>Potencia</h2>
         <table className="subtablas">
           <thead>
@@ -30,15 +29,15 @@ const {totalesPotencia} = useContext(PotenciaContextC);
             </tr>
           </thead>
           <tbody>
-            <TRPC periodo={"P1"} />
-            <TRPC periodo={"P2"} />
-            <TRPC periodo={"P3"} />
-            <TRPC periodo={"P4"} />
-            <TRPC periodo={"P5"} />
-            <TRPC periodo={"P6"} />
+            <TRPS periodo={"P1"} />
+            <TRPS periodo={"P2"} />
+            <TRPS periodo={"P3"} />
+            <TRPS periodo={"P4"} />
+            <TRPS periodo={"P5"} />
+            <TRPS periodo={"P6"} />
           </tbody>
           <tfoot>
-            <tr>
+          <tr>
               <td className="hidden"></td>
               <td className="hidden"></td>
               <td className="hidden"></td>
@@ -48,11 +47,10 @@ const {totalesPotencia} = useContext(PotenciaContextC);
               <td className="total"><input type="number" disabled value={Object.values(totalesPotencia.totalAnualP).reduce((a,b) => a+b)}/></td>
             </tr>
           </tfoot>
-
         </table>
       </section>
     </>
-  )
+  );
 };
 
-export default Potencia;
+export default SPotencia;

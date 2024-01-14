@@ -6,8 +6,8 @@ import SPotencia from './SPotencia';
 import Form from './Form';
 import Otros from "./Otros";
 import STotal from './STotal';
-import { PropuestaEnergiaContext } from '../../../context/PropuestaEnergiaContext';
-import { PropuestaPotenciaContext } from '../../../context/PropuestaPotenciaContext';
+import { PropuestaEnergiaContext } from '../../../../context/PropuestaEnergiaContext';
+import { PropuestaPotenciaContext } from '../../../../context/PropuestaPotenciaContext';
 
 
 const TablaSeveral = () => {

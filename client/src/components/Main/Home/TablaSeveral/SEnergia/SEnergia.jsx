@@ -1,20 +1,18 @@
-import { useContext } from 'react';
 import React from "react";
-import TR from '../../TR'
-import { EnergiaContext } from '../../../../context/EnergiaContext';
+import { useContext } from "react";
+import TRS from "../../../TRS/TRS";
+import { PropuestaEnergiaContext } from "../../../../../context/PropuestaEnergiaContext";
 
+const SEnergia = () => {
 
-const Energia = () => {
-
-  const { totalesEnergia} = useContext(EnergiaContext);
-
+  const { totalesEnergia} = useContext(PropuestaEnergiaContext);
 
   return (
     <>
-    <section className="enpt">
+    <section className="propenpt">
       <h2>Energía</h2>
       <table className="subtablas">
-        <thead>
+      <thead>
         <tr>
           <th className="th1">Consumo anual (kWh)</th>
           <th className="th1">Consumo factura actual (kWh)
@@ -33,12 +31,12 @@ const Energia = () => {
         </tr>
         </thead>
         <tbody>
-        <TR periodo={"P1"}/>
-        <TR periodo={"P2"}/>
-        <TR periodo={"P3"}/>
-        <TR periodo={"P4"}/>
-        <TR periodo={"P5"}/>
-        <TR periodo={"P6"}/>
+        <TRS periodo={"P1"}/>
+        <TRS periodo={"P2"}/>
+        <TRS periodo={"P3"}/>
+        <TRS periodo={"P4"}/>
+        <TRS periodo={"P5"}/>
+        <TRS periodo={"P6"}/>
         </tbody>
         <tfoot>
         <tr>
@@ -58,4 +56,4 @@ const Energia = () => {
   );
 };
 
-export default Energia;
+export default SEnergia;

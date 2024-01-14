@@ -5,8 +5,8 @@ import Energia from "./Energia"
 import Potencia from "./Potencia"
 import Total from './Total'
 import COtros from './COtros'
-import { EnergiaContext } from "../../../context/EnergiaContext";
-import { PotenciaContextC } from "../../../context/PotenciaContextC"
+import { EnergiaContext } from "../../../../context/EnergiaContext";
+import { PotenciaContextC } from "../../../../context/PotenciaContextC"
 
 const TablaCliente = () => {
 
