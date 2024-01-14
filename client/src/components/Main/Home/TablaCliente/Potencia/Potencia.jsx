@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-import TRPC from "../../../TRPC/TRPC";
+import TRPC from "../../TRPC/TRPC";
 import { PotenciaContextC } from "../../../../../context/PotenciaContextC";
 
 

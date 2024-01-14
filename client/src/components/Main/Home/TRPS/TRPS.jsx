@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import React, { useEffect, useState } from "react";
-import { PropuestaPotenciaContext } from "../../../context/PropuestaPotenciaContext";
+import { PropuestaPotenciaContext } from "../../../../context/PropuestaPotenciaContext";
 
 const TRPS = ({ periodo }) => {
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useContext } from "react";
-import { PotenciaContextC } from "../../../context/PotenciaContextC";
+import { PotenciaContextC } from "../../../../context/PotenciaContextC";
 
 
 const TRPC = ({periodo}) => {

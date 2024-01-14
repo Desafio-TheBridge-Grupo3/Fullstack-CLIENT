@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
-import TRPS from "../../../TRPS/TRPS";
-import { PropuestaPotenciaContext } from '../../../../../context/PropuestaPotenciaContext'
+import TRPS from "../../TRPS/TRPS";
+import { PropuestaPotenciaContext } from "../../../../../context/PropuestaPotenciaContext";
 
 const SPotencia = () => {
 

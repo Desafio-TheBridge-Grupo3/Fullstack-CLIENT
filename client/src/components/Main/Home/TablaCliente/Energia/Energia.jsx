@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import React from "react";
-import TR from '../../../TR'
+import TR from '../../TR/TR';
 import { EnergiaContext } from '../../../../../context/EnergiaContext';
 
 

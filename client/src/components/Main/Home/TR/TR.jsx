@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useContext } from 'react';
-import { EnergiaContext } from "../../../context/EnergiaContext";
+import { EnergiaContext } from "../../../../context/EnergiaContext";
 
 const TR = ({ periodo }) => {
 
