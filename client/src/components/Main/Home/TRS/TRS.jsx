@@ -75,12 +75,12 @@ const TRS = ({ periodo }) => {
     <tr>
       <td><input placeholder="--" type="number" value={consumoAnual} onChange={(e) => update(e, setConsumoAnual)} /></td>
       <td><input placeholder="--" type="number" value={consumoActual} onChange={(e) => update(e, setConsumoActual)} /></td>
-      <td className="disabled"><input  type="number" value={preciosAnual} disabled />€</td>
-      <td className="disabled"><input type="number" value={preciosFacturacion} disabled />€</td>
+      <td className="disabled"><input  type="number" value={preciosAnual} disabled /></td>
+      <td className="disabled"><input type="number" value={preciosFacturacion} disabled /></td>
       <td className="disabled"><input type="number"  placeholder="--" value={descuento} disabled/></td>
-      <td className="total"><input type="number" disabled value={precioConDescuento} />€</td>
-      <td className="total"><input type="number" disabled value={totalPagoFactura} />€</td>
-      <td className="total"><input type="number" disabled value={totalPagoAnual} />€</td>
+      <td className="total"><input type="number" disabled value={precioConDescuento} /></td>
+      <td className="total"><input type="number" disabled value={totalPagoFactura} /></td>
+      <td className="total"><input type="number" disabled value={totalPagoAnual} /></td>
     </tr>
   );
 };
