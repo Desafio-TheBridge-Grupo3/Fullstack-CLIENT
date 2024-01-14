@@ -4,13 +4,10 @@ import { Route, Routes, Navigate } from "react-router-dom"
 import Home from "./Home";
 import Metodo from "./Metodo";
 import CargaDatos from "./CargaDatos";
+import UserView from "./UserView";
 //import { UserContext } from "../../context/UserContext"
 
-
-
 const Main = () => {
-
-
 
   return (
     <>
@@ -20,11 +17,13 @@ const Main = () => {
         <Route path="/" element ={<Metodo/>}/>
         <Route path="/carga" element={<CargaDatos/>}/>
         <Route path="/home" element={<Home />} />
+        <Route path="/profile" element={<UserView />} />
         <Route path="/*" element={<Navigate to={"/"} />} /> 
       </Routes>
     </main>
+
     </>
-  )
+  );
 };
 
 export default Main;
