@@ -4,7 +4,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 6.558px;
-    margin-top: 50px;
     max-width: 1388px;
 }
 
@@ -21,93 +20,90 @@
     border-spacing: 8px 0;
 }
 
-#energia{
+#energia {
     display: flex;
-padding: 13.116px ;
-flex-direction: column;
-align-items: flex-start;
-gap: 13.116px;
-min-width: 730px;
-max-width: 730px;
-padding-left: 0;
-
-& >table>thead>tr>.th1{
-background-color: $tabla1;
-}
-}
-
-#potencia{
-    display: flex;
-padding: 13.116px ;
-flex-direction: column;
-align-items: flex-start;
-gap: 13.116px;
-max-width: 546px;
-min-width: 546px;
-& >table>thead>tr>.th1{
-    background-color: $tabla1;
-    }
-}
-
-#propEnergia{
-    display: flex;
-    padding: 13.116px ;
+    padding: 13.116px;
     flex-direction: column;
     align-items: flex-start;
     gap: 13.116px;
     min-width: 730px;
     max-width: 730px;
     padding-left: 0;
-    
-    & >table>thead>tr>.th1{
-    background-color: $tabla2;
+
+    &>table>thead>tr>.th1 {
+        background-color: $tabla1;
     }
 }
 
-#propPotencia{
+#potencia {
     display: flex;
-padding: 13.116px ;
-flex-direction: column;
-align-items: flex-start;
-gap: 13.116px;
-max-width: 546px;
-min-width: 546px;
-& >table>thead>tr>.th1{
-    background-color: $tabla2;
+    padding: 13.116px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13.116px;
+    max-width: 546px;
+    min-width: 546px;
+
+    &>table>thead>tr>.th1 {
+        background-color: $tabla1;
     }
 }
 
-.tituloTabla{
+#propEnergia {
+    display: flex;
+    padding: 13.116px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13.116px;
+    min-width: 730px;
+    max-width: 730px;
+    padding-left: 0;
+
+    &>table>thead>tr>.th1 {
+        background-color: $tabla2;
+    }
+}
+
+#propPotencia {
+    display: flex;
+    padding: 13.116px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13.116px;
+    max-width: 546px;
+    min-width: 546px;
+
+    &>table>thead>tr>.th1 {
+        background-color: $tabla2;
+    }
+}
+
+.tituloTabla {
     color: $red;
-font-size: 48px;
-font-weight: 800;
-line-height: 56px;
-display: flex;
-max-width: 400px;
-height: 96px;
-padding: 10px;
-align-items: center;
-margin: 36px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 30px;
 }
 
 
 #compañia {
     display: flex;
-    width: 248px;
+    width: 150px;
     height: 96px;
     justify-content: center;
     align-items: center;
     border-radius: 4px;
     background: $white;
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
-    margin: 36px;
+    margin: 36px 0;
 }
 
-.compañia{
+.compañia {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-items: start;
-    width: 900px;
+    width: 500px;
     align-items: center;
 }
 
@@ -129,19 +125,20 @@ h2 {
     border-radius: 4px;
     background: var(--common-surface-default, $white);
     max-width: 70px;
+    min-width: 70px;
     color: $text;
 }
 
 
 
-tbody{
+tbody {
     grid-column-gap: 10px;
     display: contents;
 }
 
 td {
     max-width: 70px;
-    min-width:70px;
+    min-width: 70px;
     padding: 8px;
     align-items: center;
     gap: 8px;
@@ -157,5 +154,3 @@ input {
     max-width: 70px;
     color: $text;
 }
-
-
