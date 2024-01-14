@@ -10,7 +10,7 @@ const Metodo = () => {
   }
 
   const rellenarTabla=()=>{
-    navigate(`/tabla`)
+    navigate(`/home`)
   }
 
   return (
