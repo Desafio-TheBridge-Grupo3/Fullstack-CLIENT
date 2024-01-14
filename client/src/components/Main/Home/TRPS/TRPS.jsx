@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import React, { useEffect, useState } from "react";
-import { PropuestaPotenciaContext } from "../../../../context/PropuestaPotenciaContext";
-
+import { MacroContext } from "../../../../context/MacroContext";
 const TRPS = ({ periodo }) => {
 
   const [potenciaContratada, setPotenciaContratada] = useState([])
@@ -17,7 +16,7 @@ const TRPS = ({ periodo }) => {
     setter(Number(event.target.value))
   }
 
-  const { totalesPotencia, updateTotalesPotencia } = useContext(PropuestaPotenciaContext);
+  const { tablaSeveral, updateTablaSeveral } = useContext(MacroContext);
 
 
   //multiplicaciones en cada fila
@@ -34,22 +33,22 @@ const TRPS = ({ periodo }) => {
   //sumas en columna
   useEffect(() => {
     const sumar = {
-      ...totalesPotencia.totalFacturaP
+      ...tablaSeveral.totalFacturaP
     }
     sumar[periodo] = totalPagoFactura
 
-    updateTotalesPotencia({ ...totalesPotencia, totalFacturaP: sumar })
+    updateTablaSeveral({ ...tablaSeveral, totalFacturaP: sumar })
 
   }, [totalPagoFactura])
 
 
   useEffect(() => {
     const sumar = {
-      ...totalesPotencia.totalAnualP
+      ...tablaSeveral.totalAnualP
     }
     sumar[periodo] = totalPagoAnual
 
-    updateTotalesPotencia({ ...totalesPotencia, totalAnualP: sumar })
+    updateTablaSeveral({ ...tablaSeveral, totalAnualP: sumar })
   }, [totalPagoAnual])
 
   return (

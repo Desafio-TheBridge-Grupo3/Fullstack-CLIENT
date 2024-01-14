@@ -1,12 +1,12 @@
 import React from "react";
 import { useContext } from "react";
 import TRPC from "../../TRPC/TRPC";
-import { PotenciaContextC } from "../../../../../context/PotenciaContextC";
+import { MacroContext } from "../../../../../context/MacroContext";
 
 
 const Potencia = () => {
 
-const {totalesPotencia} = useContext(PotenciaContextC);
+const {tablaCliente} = useContext(MacroContext);
 
 
   return (
@@ -44,8 +44,8 @@ const {totalesPotencia} = useContext(PotenciaContextC);
               <td className="hidden"></td>
               <td className="hidden"></td>
               <td className="hidden"></td>
-              <td className="total"><input type="number" disabled value={Object.values(totalesPotencia.totalFacturaP).reduce((a,b) => a+b)}/></td>
-              <td className="total"><input type="number" disabled value={Object.values(totalesPotencia.totalAnualP).reduce((a,b) => a+b)}/></td>
+              <td className="total"><input type="number" disabled value={Object.values(tablaCliente.totalFacturaP).reduce((a,b) => a+b)}/></td>
+              <td className="total"><input type="number" disabled value={Object.values(tablaCliente.totalAnualP).reduce((a,b) => a+b)}/></td>
             </tr>
           </tfoot>
 

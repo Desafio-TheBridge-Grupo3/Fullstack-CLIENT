@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useContext } from 'react';
-import { EnergiaContext } from "../../../../context/EnergiaContext";
+import { MacroContext } from "../../../../context/MacroContext";
 
 const TR = ({ periodo }) => {
 
@@ -18,7 +18,7 @@ const TR = ({ periodo }) => {
     setter(Number(event.target.value))
   }
 
-  const { totalesEnergia, updateTotalesEnergia } = useContext(EnergiaContext);
+  const { tablaCliente, updateTablaCliente } = useContext(MacroContext);
 
   //multiplicaciones en fila
   useEffect(() => {
@@ -39,42 +39,42 @@ const TR = ({ periodo }) => {
 //sumas en columna
   useEffect(() => {
     const sumar = {
-      ...totalesEnergia.consumoAnual
+      ...tablaCliente.consumoAnual
     }
     sumar[periodo] = consumoAnual
 
-    updateTotalesEnergia({ ...totalesEnergia, consumoAnual: sumar })
+    updateTablaCliente({ ...tablaCliente, consumoAnual: sumar })
   }, [consumoAnual])
 
 
   useEffect(() => {
     const sumar = {
-      ...totalesEnergia.consumoActual
+      ...tablaCliente.consumoActual
     }
     sumar[periodo] = consumoActual
 
-    updateTotalesEnergia({ ...totalesEnergia, consumoActual: sumar })
+    updateTablaCliente({ ...tablaCliente, consumoActual: sumar })
   }, [consumoActual])
 
 
   useEffect(() => {
     const sumar = {
-      ...totalesEnergia.totalFactura
+      ...tablaCliente.totalFactura
     }
     sumar[periodo] = totalPagoFactura
 
-    updateTotalesEnergia({ ...totalesEnergia, totalFactura: sumar })
+    updateTablaCliente({ ...tablaCliente, totalFactura: sumar })
 
   }, [totalPagoFactura])
 
 
   useEffect(() => {
     const sumar = {
-      ...totalesEnergia.totalAnual
+      ...tablaCliente.totalAnual
     }
     sumar[periodo] = totalPagoAnual
 
-    updateTotalesEnergia({ ...totalesEnergia, totalAnual: sumar })
+    updateTablaCliente({ ...tablaCliente, totalAnual: sumar })
   }, [totalPagoAnual])
 
 

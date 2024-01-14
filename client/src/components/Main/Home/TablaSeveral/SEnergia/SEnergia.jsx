@@ -1,11 +1,10 @@
 import React from "react";
 import { useContext } from "react";
 import TRS from "../../TRS/TRS";
-import { PropuestaEnergiaContext } from "../../../../../context/PropuestaEnergiaContext";
-
+import { MacroContext } from "../../../../../context/MacroContext";
 const SEnergia = () => {
 
-  const { totalesEnergia} = useContext(PropuestaEnergiaContext);
+  const { tablaSeveral} = useContext(MacroContext);
 
   return (
     <>
@@ -40,14 +39,14 @@ const SEnergia = () => {
         </tbody>
         <tfoot>
         <tr>
-          <td className="total"><input type="number" disabled value={Object.values(totalesEnergia.consumoAnual).reduce((a,b) => a+b)}/></td>
-          <td className="total"><input type="number" disabled value={Object.values(totalesEnergia.consumoActual).reduce((a,b) => a+b)}/></td>
+          <td className="total"><input type="number" disabled value={Object.values(tablaSeveral.consumoAnual).reduce((a,b) => a+b)}/></td>
+          <td className="total"><input type="number" disabled value={Object.values(tablaSeveral.consumoActual).reduce((a,b) => a+b)}/></td>
           <td className="hidden"></td>
           <td className="hidden"></td>
           <td className="hidden"></td>
           <td className="hidden"></td>
-          <td className="total"><input type="number" disabled value={Object.values(totalesEnergia.totalFactura).reduce((a,b) => a+b)}/></td>
-          <td className="total"><input type="number" disabled value={Object.values(totalesEnergia.totalAnual).reduce((a,b) => a+b)}/></td>
+          <td className="total"><input type="number" disabled value={Object.values(tablaSeveral.totalFactura).reduce((a,b) => a+b)}/></td>
+          <td className="total"><input type="number" disabled value={Object.values(tablaSeveral.totalAnual).reduce((a,b) => a+b)}/></td>
         </tr>
         </tfoot>
       </table>

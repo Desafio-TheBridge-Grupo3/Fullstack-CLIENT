@@ -6,7 +6,7 @@
     min-width: 401px;
     max-width: 401px;
 
-    &>p,
+    &>label,
     input {
         display: flex;
         width: 160px;
@@ -25,7 +25,7 @@
     grid-template-columns: repeat(6, 1fr);
     justify-items: center;
     align-items: center;
-    
+    gap: 20px 0;
 }
 
 
@@ -62,4 +62,12 @@
     width: 200px;
     color:$heavy;
     font-size: larger;
+}
+
+#iva{
+    border: none;
+    background: $cell;
+    max-width: 70px;
+    color: $text;
+    cursor: pointer;
 }

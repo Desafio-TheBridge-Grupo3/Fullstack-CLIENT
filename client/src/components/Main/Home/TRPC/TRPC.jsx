@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useContext } from "react";
-import { PotenciaContextC } from "../../../../context/PotenciaContextC";
+import { MacroContext } from "../../../../context/MacroContext";
 
 
 const TRPC = ({periodo}) => {
@@ -17,7 +17,7 @@ const update = (event, setter) => {
   setter(Number(event.target.value))
 }
 
-const { totalesPotencia, updateTotalesPotencia } = useContext(PotenciaContextC);
+const { tablaCliente, updateTablaCliente } = useContext(MacroContext);
 
 
 //multiplicaciones en cada fila
@@ -38,22 +38,22 @@ setTotalPagoFactura(potenciaFacturada*precioConDescuento * 30)
 //sumas en columna
 useEffect(() => {
   const sumar = {
-    ...totalesPotencia.totalFacturaP
+    ...tablaCliente.totalFacturaP
   }
   sumar[periodo] = totalPagoFactura
 
-  updateTotalesPotencia({ ...totalesPotencia, totalFacturaP: sumar })
+  updateTablaCliente({ ...tablaCliente, totalFacturaP: sumar })
 
 }, [totalPagoFactura])
 
 
 useEffect(() => {
   const sumar = {
-    ...totalesPotencia.totalAnualP
+    ...tablaCliente.totalAnualP
   }
   sumar[periodo] = totalPagoAnual
 
-  updateTotalesPotencia({ ...totalesPotencia, totalAnualP: sumar })
+  updateTablaCliente({ ...tablaCliente, totalAnualP: sumar })
 }, [totalPagoAnual])
 
 
