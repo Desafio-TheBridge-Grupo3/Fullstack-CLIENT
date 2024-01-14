@@ -16,6 +16,14 @@
     color: $bold;
 }
 
+.carga{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
 .opciones {
     width: 472px;
     height: 48px;
@@ -38,6 +46,7 @@
 #mini{
     font-size: smaller;
     color: $text;
+    margin-top: 0;
 }
 
 input[type=file]{
@@ -48,5 +57,56 @@ input[type=file]{
     }
     &:active{
         background-color: $insertarPresion;
+    }
+}
+
+#cambio{
+    width: 472px;
+height: 48px;
+padding: 10px;
+text-align: center;
+color:$boton;
+font-weight: bold;
+
+&:hover {
+    color: $botonHover;
+}
+
+&:active{
+    color: $botonPresion;
+}
+}
+
+
+.boton-sin-archivo{
+    width: 472px;
+    height: 48px;
+    padding: 10px;
+    justify-content: center;
+    border-radius: 12px;
+    margin: 16px;
+    background-color: $botonInactivo;
+    color: $white;
+    font-weight: bold;
+    border: none;
+}
+
+.boton-con-archivo{
+    width: 472px;
+    height: 48px;
+    padding: 10px;
+    justify-content: center;
+    border-radius: 12px;
+    margin: 16px;
+    background-color: $boton;
+    color: $white;
+    font-weight: bold;
+    border: none;
+    &:hover {
+        color: $botonHover;
+    }
+    
+    &:active{
+        color: $botonPresion;
     }
 }
