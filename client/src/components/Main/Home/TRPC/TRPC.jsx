@@ -17,7 +17,7 @@ const update = (event, setter) => {
   setter(Number(event.target.value))
 }
 
-const { tablaCliente, updateTablaCliente } = useContext(MacroContext);
+const { tablaCliente, otros, updateTablaCliente } = useContext(MacroContext);
 
 
 //multiplicaciones en cada fila
@@ -30,8 +30,8 @@ useEffect(() => {
 }, [potenciaContratada, precioPotencia])
 
 useEffect(() => {
-setTotalPagoFactura(potenciaFacturada*precioConDescuento * 30)
-}, [potenciaFacturada, precioConDescuento])
+setTotalPagoFactura(potenciaFacturada*precioConDescuento * otros.diasFacturacion)
+}, [potenciaFacturada, precioConDescuento, otros.diasFacturacion])
 // cambiar por dias facturados
 
 

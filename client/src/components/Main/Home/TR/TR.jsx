@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useContext } from 'react';
+import { useDebounce } from "use-debounce";
 import { MacroContext } from "../../../../context/MacroContext";
 
 const TR = ({ periodo }) => {
 
-  const [consumoAnual, setConsumoAnual] = useState([])
-  const [consumoActual, setConsumoActual] = useState([])
-  const [preciosAnual, setPreciosAnual] = useState([])
-  const [preciosFacturacion, setPreciosFacturacion] = useState([])
-  const [descuento, setDescuento] = useState([])
-  const [precioConDescuento, setPrecioConDescuento] = useState([])
-  const [totalPagoFactura, setTotalPagoFactura] = useState([])
-  const [totalPagoAnual, setTotalPagoAnual] = useState([])
+  const [consumoAnual, setConsumoAnual] = useState(0)
+  const [consumoActual, setConsumoActual] = useState(0)
+  const [preciosAnual, setPreciosAnual] = useState(0)
+  const [preciosFacturacion, setPreciosFacturacion] = useState(0)
+  const [descuento, setDescuento] = useState(0)
+  const [precioConDescuento, setPrecioConDescuento] = useState(0)
+  const [totalPagoFactura, setTotalPagoFactura] = useState(0)
+  const [totalPagoAnual, setTotalPagoAnual] = useState(0)
 
+  const [debouncedDescuento] = useDebounce(descuento, 500);
 
   const update = (event, setter) => {
     setter(Number(event.target.value))
@@ -65,7 +67,7 @@ const TR = ({ periodo }) => {
 
     updateTablaCliente({ ...tablaCliente, totalFactura: sumar })
 
-  }, [totalPagoFactura])
+  }, [totalPagoFactura, descuento])
 
 
   useEffect(() => {
@@ -75,7 +77,7 @@ const TR = ({ periodo }) => {
     sumar[periodo] = totalPagoAnual
 
     updateTablaCliente({ ...tablaCliente, totalAnual: sumar })
-  }, [totalPagoAnual])
+  }, [totalPagoAnual, debouncedDescuento])
 
 
 
