@@ -32,6 +32,7 @@ const ProfileComponent = () => {
         <Card.Text className="cardText">
           Dirección de suministro<br/>
           CUPS
+          <section className="id">ID 4054</section> 
         </Card.Text>
       </Card.Body>
     </Card>
@@ -41,6 +42,7 @@ const ProfileComponent = () => {
         <Card.Text className="cardText">
           Dirección de suministro<br/>
           CUPS
+          <section className="id">ID 4054</section>
         </Card.Text>
       </Card.Body>
     </Card>
@@ -50,6 +52,7 @@ const ProfileComponent = () => {
         <Card.Text className="cardText">
           Dirección de suministro<br/>
           CUPS
+          <section className="id">ID 4054</section>
         </Card.Text>
       </Card.Body>
     </Card>
@@ -59,6 +62,7 @@ const ProfileComponent = () => {
         <Card.Text className="cardText">
           Dirección de suministro<br/>
           CUPS
+          <section className="id">ID 4054</section>
         </Card.Text>
       </Card.Body>
     </Card>
@@ -68,6 +72,7 @@ const ProfileComponent = () => {
         <Card.Text className="cardText">
           Dirección de suministro<br/>
           CUPS
+          <section className="id">ID 4054</section>
         </Card.Text>
       </Card.Body>
     </Card>
