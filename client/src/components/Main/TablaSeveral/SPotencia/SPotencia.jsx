@@ -18,7 +18,7 @@ const SPotencia = () => {
               <th className="th1">Potencia Contratada (kW)</th>
               <th className="th1">Potencia Facturada (kW)
               </th>
-              <th className="th1">Precios potencia (€/kWh/dia)
+              <th className="th1">Precios potencia (€/kWh/día)
               </th>
               <th className="th1">Descuento</th>
               <th className="th1">Precio con Descuento</th>
