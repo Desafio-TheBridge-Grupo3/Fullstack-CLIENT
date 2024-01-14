@@ -13,27 +13,26 @@ main {
 }
 
 h1 {
-  color: var(--several-grises-70, #4d4d4d);
-  font-feature-settings: "clig" off, "liga" off;
+  color: var(--several-grises-80, #333);
 
-  /* Web_H2 */
-  font-family: "Lato";
-  font-size: 700px;
-  font-style: Regular;
-  font-weight: 400;
-  line-height: 48px; /* 120% */
+/* Web_H1 */
+font-family: Lato;
+font-size: 56px;
+font-style: normal;
+font-weight: 800;
+line-height: 64px; /* 114.286% */
 }
 
 h3 {
   color: var(--several-grises-70, #4d4d4d);
   font-feature-settings: "clig" off, "liga" off;
 
-  /* Web_H2 */
+  // /* Web_H2 */
   font-family: Lato;
-  font-size: 40px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 500;
-  // line-height: 48px; /* 120% */
+  line-height: 48px; /* 120% */
 }
 
 .newProposal {
@@ -52,8 +51,8 @@ h3 {
 
 .addIcon {
   display: flex;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   padding: 16px 16px 17px 17px;
   justify-content: center;
   align-items: center;
