@@ -8,8 +8,8 @@
     font-size: 95%;
     margin:5px auto;
     min-height: 100vh;
-    min-width: 1440px;
-    max-width: 1540px;
+    min-width: 1440px !important;
+    max-width: 1540px !important;
     background-color: $background;
 }
 
