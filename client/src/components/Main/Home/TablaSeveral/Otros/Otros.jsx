@@ -1,7 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useContext } from "react";
+import { MacroContext } from "../../../../../context/MacroContext";
 
 const Otros = () => {
 
+  const { otros, updateOtros } = useContext(MacroContext);
+
+  const [otrosConceptos, setOtrosConceptos] = useState([])
+  const [otrosConceptosAnuales, setOtrosConceptosAnuales] = useState([])
+
+  const update = (event, setter) => {
+    setter(Number(event.target.value))
+  }
+
+  useEffect(()=>{
+    let otrosConceptosCalc = 0;
+    if(otros.otrosPropuesta1 && otros.otrosPropuesta2){
+      otrosConceptosCalc = (otros.otrosImporte1 + otros.otrosImporte2)
+    } else if(otros.otrosPropuesta1){
+      otrosConceptosCalc= otros.otrosImporte1
+    } else if (otros.otrosPropuesta2){
+      otrosConceptosCalc = otros.otrosImporte2
+    } 
+    setOtrosConceptos(otrosConceptosCalc)
+    updateOtros({ ...otros, otrosConceptos})
+  },[otrosConceptos])
+
+  useEffect(()=>{
+    let anual = 0;
+    const cociente = 12.167
+    if(otros.otrosPropuesta1 && otros.otrosPropuesta2 && otros.otrosAnual1 && otros.otrosAnual2){
+      anual = (otros.otrosImporte1 + otros.otrosImporte2) * cociente
+    } else if(otros.otrosPropuesta1 && otros.otrosAnual1){
+      anual = otros.otrosImporte1 * cociente
+    } else if (otros.otrosPropuesta2 && otros.otrosAnual2){
+      anual = otros.otrosImporte2 * cociente
+    } 
+    setOtrosConceptosAnuales(anual)
+    updateOtros({...otros, otrosConceptosAnuales } )
+  }, [otros.otrosPropuesta1,otros.otrosPropuesta2, otros.otrosImporte1, otros.otrosImporte2, otros.otrosAnual1, otros.otrosAnual2])
 
 
 
@@ -15,11 +52,11 @@ const Otros = () => {
 
 
         <p>Otros conceptos</p>
-        <input placeholder="--" disabled />
+        <input disabled value={otros.otrosConceptos} />
 
 
         <p >Otros conceptos anual</p>
-        <input placeholder="--" disabled />
+        <input disabled value={otros.otrosConceptosAnuales} />
 
 
       </article>

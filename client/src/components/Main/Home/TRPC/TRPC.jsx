@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useContext } from "react";
-import { useDebounce } from "use-debounce";
 import { MacroContext } from "../../../../context/MacroContext";
 
 
@@ -14,7 +13,6 @@ const [precioConDescuento, setPrecioConDescuento] = useState([])
 const [totalPagoFactura, setTotalPagoFactura] = useState([])
 const [totalPagoAnual, setTotalPagoAnual] = useState([])
 
-const [debouncedDescuento] = useDebounce(descuento, 500);
 
 const { tablaCliente, otros, updateTablaCliente } = useContext(MacroContext);
 
@@ -33,7 +31,29 @@ useEffect(() => {
 }, [potenciaContratada, precioPotencia])
 
 
+
 // actualizadores del context
+
+useEffect(() => {
+  const sumar = {
+    ...tablaCliente.potenciaContratada
+  }
+  sumar[periodo] = potenciaContratada
+
+  updateTablaCliente({ ...tablaCliente, potenciaContratada: sumar })
+}, [potenciaContratada])
+
+
+useEffect(() => {
+  const sumar = {
+    ...tablaCliente.potenciaFacturada
+  }
+  sumar[periodo] = potenciaFacturada
+
+  updateTablaCliente({ ...tablaCliente, potenciaFacturada: sumar })
+}, [potenciaFacturada])
+
+
 useEffect(() => {
   const sumar = {
     ...tablaCliente.totalFacturaP

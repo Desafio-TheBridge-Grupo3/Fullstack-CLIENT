@@ -42,6 +42,22 @@ const Home = () => {
         P5:0,
         P6:0
       },
+      potenciaContratada:{
+        P1:0,
+        P2:0,
+        P3:0,
+        P4:0,
+        P5:0,
+        P6:0
+      },
+      potenciaFacturada:{
+        P1:0,
+        P2:0,
+        P3:0,
+        P4:0,
+        P5:0,
+        P6:0
+      },
       totalFacturaP:{
         P1:0,
         P2:0,
@@ -66,22 +82,6 @@ const Home = () => {
 
     const [tablaSeveral, setTablaSeveral] = useState(
       {
-        consumoAnual:{
-          P1:0,
-          P2:0,
-          P3:0,
-          P4:0,
-          P5:0,
-          P6:0
-        },
-        consumoActual:{
-          P1:0,
-          P2:0,
-          P3:0,
-          P4:0,
-          P5:0,
-          P6:0
-        },
         totalFactura:{
           P1:0,
           P2:0,
@@ -113,7 +113,11 @@ const Home = () => {
           P4:0,
           P5:0,
           P6:0
-        }
+        },
+        totalEnergiaFacturaSev:0,
+        totalEnergiaAnualSev:0,
+        totalPotenciaFacturaSev:0,
+        totalPotenciaAnualSev:0
       })
 
       const [otros, setOtros] = useState(
@@ -127,7 +131,9 @@ const Home = () => {
           otrosImporte2:0,
           otrosPropuesta2: false,
           otrosAnual2:false,
-          iva:0.21
+          iva:0.21,
+          otrosConceptos:0,
+          otrosConceptosAnuales:0
         })
 
 

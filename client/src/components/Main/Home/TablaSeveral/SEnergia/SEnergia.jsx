@@ -1,10 +1,27 @@
 import React from "react";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from 'react';
 import TRS from "../../TRS/TRS";
 import { MacroContext } from "../../../../../context/MacroContext";
+
+
 const SEnergia = () => {
 
-  const { tablaSeveral} = useContext(MacroContext);
+  const { tablaCliente, tablaSeveral, updateTablaSeveral} = useContext(MacroContext);
+
+  const [totalEnergiaFacturaSev, setTotalEnergiaFacturaSev] = useState(0)
+  const [totalEnergiaAnualSev, setTotalEnergiaAnualSev] = useState(0)
+
+  useEffect(()=>{
+    const total=Object.values(tablaSeveral.totalFactura).reduce((a,b) => a+b)
+    setTotalEnergiaFacturaSev(total)
+    updateTablaSeveral({...tablaSeveral, totalEnergiaFacturaSev:total})
+  }, [tablaSeveral.totalFactura])
+
+  useEffect(()=>{
+    const total=Object.values(tablaSeveral.totalAnual).reduce((a,b) => a+b)
+    setTotalEnergiaAnualSev(total)
+    updateTablaSeveral({...tablaSeveral, totalEnergiaAnualSev:total})
+  }, [tablaSeveral.totalAnual])
 
   return (
     <>
@@ -39,14 +56,14 @@ const SEnergia = () => {
         </tbody>
         <tfoot>
         <tr>
-          <td className="total"><input type="number" disabled value={Object.values(tablaSeveral.consumoAnual).reduce((a,b) => a+b)}/></td>
-          <td className="total"><input type="number" disabled value={Object.values(tablaSeveral.consumoActual).reduce((a,b) => a+b)}/></td>
+          <td className="total"><input type="number" disabled value={Object.values(tablaCliente.consumoAnual).reduce((a,b) => a+b)}/></td>
+          <td className="total"><input type="number" disabled value={Object.values(tablaCliente.consumoActual).reduce((a,b) => a+b)}/></td>
           <td className="hidden"></td>
           <td className="hidden"></td>
           <td className="hidden"></td>
           <td className="hidden"></td>
-          <td className="total"><input type="number" disabled value={Object.values(tablaSeveral.totalFactura).reduce((a,b) => a+b)}/></td>
-          <td className="total"><input type="number" disabled value={Object.values(tablaSeveral.totalAnual).reduce((a,b) => a+b)}/></td>
+          <td className="total"><input type="number" disabled value={totalEnergiaFacturaSev}/></td>
+          <td className="total"><input type="number" disabled value={totalEnergiaAnualSev}/></td>
         </tr>
         </tfoot>
       </table>
