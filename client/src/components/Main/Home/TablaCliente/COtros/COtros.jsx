@@ -6,7 +6,7 @@ const COtros = () => {
 
   const { otros, updateOtros } = useContext(MacroContext);
 
-  const [diasFacturacion, setDiasFacturacion] = useState(30)
+  const [diasFacturacion, setDiasFacturacion] = useState(0)
   const [energiaReactiva, setEnergiaReactiva] = useState(0)
   const [impuestoElectrico, setImpuestoElectrico] = useState(0)
   const [alquilerEquipo, setAlquilerEquipo] = useState(0)
@@ -48,6 +48,16 @@ const COtros = () => {
     updateOtros({ ...otros, otrosAnual1})
   }, [otrosAnual1])
 
+  useEffect(() => {
+    updateOtros({ ...otros, otrosImporte2})
+  }, [otrosImporte2])
+  useEffect(() => {
+    updateOtros({ ...otros, otrosPropuesta2})
+  }, [otrosPropuesta2])
+  useEffect(() => {
+    updateOtros({ ...otros, otrosAnual2})
+  }, [otrosAnual2])
+
   return (
     <>
       <article>
@@ -80,11 +90,11 @@ const COtros = () => {
           <input type="checkbox" value={otrosAnual1} onChange={(e) => updateBoolean(e, setOtrosAnual1)}/> 
 
           <label>Otros conceptos</label>
-          <input placeholder="--" type="number" value={otrosImporte2}/>
+          <input placeholder="--" type="number" value={otrosImporte2} onChange={(e) => update(e, setOtrosImporte2)}/>
           <label>Incluir en nuestra propuesta</label>
-          <input type="checkbox" value={otrosPropuesta2}/> 
+          <input type="checkbox" value={otrosPropuesta2} onChange={(e) => updateBoolean(e, setOtrosPropuesta2)}/> 
           <label>Cobro anual</label>
-          <input type="checkbox" value={otrosAnual2}/>
+          <input type="checkbox" value={otrosAnual2} onChange={(e) => updateBoolean(e, setOtrosAnual1)}/>
 
         </article>
       </article>

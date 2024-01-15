@@ -10,10 +10,10 @@ const Total = () => {
 
 //importe total factura = (total pago factura energía +total pago factura potencia) x (1 +0,21) (porque IVA =21%)
   useEffect(()=>{
-const total = (tablaCliente.totalFactura + tablaCliente.totalFacturaP + otros.energiaReactiva + otros.otrosImporte1) * (1 + otros.iva)
+const total = (tablaCliente.totalEnergiaFacturaC +  otros.energiaReactiva + otros.otrosImporte1) * (1 + otros.iva)
 
 setTotalFactura(total)
-  }, [tablaCliente.totalFactura, tablaCliente.totalFacturaP, otros.energiaReactiva, otros.otrosImporte1, otros.iva])
+  }, [tablaCliente.totalEnergiaFacturaC,  otros.energiaReactiva, otros.otrosImporte1, otros.iva])
 
   return (
     <>

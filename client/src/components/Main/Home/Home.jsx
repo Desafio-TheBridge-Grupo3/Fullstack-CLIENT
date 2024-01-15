@@ -59,7 +59,9 @@ const Home = () => {
         P6:0
       },
       totalEnergiaFacturaC:0,
-      totalEnergiaAnualC:0
+      totalEnergiaAnualC:0,
+      totalPotenciaFacturaC:0,
+      totalPotenciaAnualC:0
     })
 
     const [tablaSeveral, setTablaSeveral] = useState(
