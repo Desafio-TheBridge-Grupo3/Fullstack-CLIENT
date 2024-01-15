@@ -16,7 +16,7 @@ const [totalFactura, setTotalFactura] = useState([])
 
 
   useEffect(()=>{
-    const sumaAnual = (tablaSeveral.totalEnergiaAnualSev + tablaSeveral.totalPotenciaAnualSev + otros.otrosConceptosAnuales)
+    const sumaAnual = (tablaSeveral.totalEnergiaAnualSev + tablaSeveral.totalPotenciaAnualSev + (otros.otrosConceptosAnuales*2))
     
     setTotalAnual(sumaAnual)
   }, [tablaSeveral.totalEnergiaAnualSev, tablaSeveral.totalPotenciaAnualSev, otros.otrosConceptosAnuales])

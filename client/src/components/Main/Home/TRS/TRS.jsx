@@ -18,11 +18,11 @@ const TRS = ({ periodo }) => {
 
   //multiplicaciones en fila
   useEffect(() => {
-    setTotalPagoAnual(preciosAnual * tablaCliente.consumoAnual )
+    setTotalPagoAnual(preciosAnual * tablaCliente.consumoAnual[periodo] )
   }, [tablaCliente.consumoAnual, preciosAnual])
 
   useEffect(() => {
-    setTotalPagoFactura(tablaCliente.consumoActual * precioConDescuento)
+    setTotalPagoFactura(tablaCliente.consumoActual[periodo] * precioConDescuento)
   }, [tablaCliente.consumoActual, precioConDescuento])
 
 
@@ -51,8 +51,8 @@ const TRS = ({ periodo }) => {
 
   return (
     <tr>
-      <td><input placeholder="--" type="number" defaultValue={tablaCliente.consumoAnual[periodo]} /></td>
-      <td><input placeholder="--" type="number" defaultValue={tablaCliente.consumoActual[periodo]}  /></td>
+      <td className="disabled"><input placeholder="--" type="number" disabled value={tablaCliente.consumoAnual[periodo]} /></td>
+      <td className="disabled"><input placeholder="--" type="number" disabled value={tablaCliente.consumoActual[periodo]}  /></td>
       <td className="disabled"><input  type="number" value={preciosAnual} disabled /></td>
       <td className="disabled"><input type="number" value={preciosFacturacion} disabled /></td>
       <td className="disabled"><input type="number"  placeholder="--" disabled/></td>

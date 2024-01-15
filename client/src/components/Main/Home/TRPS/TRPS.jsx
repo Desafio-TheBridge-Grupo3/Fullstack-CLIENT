@@ -15,11 +15,11 @@ const TRPS = ({ periodo }) => {
 
   //multiplicaciones en cada fila
   useEffect(() => {
-    setTotalPagoAnual(tablaCliente.potenciaContratada * precioPotencia * 365)
+    setTotalPagoAnual(tablaCliente.potenciaContratada[periodo] * precioPotencia * 365)
   }, [tablaCliente.potenciaContratada, precioPotencia])
 
   useEffect(() => {
-    setTotalPagoFactura(tablaCliente.potenciaFacturada * precioConDescuento * otros.diasFacturacion)
+    setTotalPagoFactura(tablaCliente.potenciaFacturada[periodo] * precioConDescuento * otros.diasFacturacion)
   }, [tablaCliente.potenciaFacturada, precioConDescuento])
  
  
@@ -45,8 +45,8 @@ const TRPS = ({ periodo }) => {
 
   return (
     <tr>
-      <td><input type="number" placeholder="--" defaultValue={tablaCliente.potenciaContratada[periodo]}  /></td>
-      <td><input type="number" placeholder="--" defaultValue={tablaCliente.potenciaFacturada[periodo]}  /></td>
+      <td className="disabled"><input type="number" placeholder="--" disabled value={tablaCliente.potenciaContratada[periodo]}  /></td>
+      <td className="disabled"><input type="number" placeholder="--" disabled value={tablaCliente.potenciaFacturada[periodo]}  /></td>
       <td className="disabled"><input type="number" value={precioPotencia} disabled/></td>
       <td className="disabled"><input type="number" placeholder="--"  disabled/></td>
       <td className="total"><input type="number" disabled value={precioConDescuento} /></td>
