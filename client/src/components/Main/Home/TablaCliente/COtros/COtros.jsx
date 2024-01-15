@@ -35,6 +35,14 @@ const COtros = () => {
   }, [energiaReactiva])
 
   useEffect(() => {
+    updateOtros({ ...otros, impuestoElectrico})
+  }, [impuestoElectrico])
+
+  useEffect(() => {
+    updateOtros({ ...otros, alquilerEquipo})
+  }, [alquilerEquipo])
+
+  useEffect(() => {
     updateOtros({ ...otros, iva})
   }, [iva])
 
@@ -70,10 +78,10 @@ const COtros = () => {
           <input placeholder="--" type="number" value={energiaReactiva} onChange={(e) => update(e, setEnergiaReactiva)}/>
 
           <label>Impuesto eléctrico</label>
-          <input placeholder="--" type="number" />
+          <input placeholder="--" type="number" value={impuestoElectrico} onChange={(e) => update(e, setImpuestoElectrico)}/>
 
           <label>Alquiler equipo</label>
-          <input placeholder="--" type="number" />
+          <input placeholder="--" type="number" value={alquilerEquipo} onChange={(e) => update(e, setAlquilerEquipo)}/>
 
           <label>IVA</label>
           <select name="iva" id="iva" value={iva} onChange={(e) => update(e, setIva)}>
