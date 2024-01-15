@@ -15,8 +15,6 @@ main {
 h1 {
   color: var(--several-grises-80, #333);
 
-/* Web_H1 */
-font-family: Lato;
 font-size: 56px;
 font-style: normal;
 font-weight: 800;
@@ -27,8 +25,7 @@ h3 {
   color: var(--several-grises-70, #4d4d4d);
   font-feature-settings: "clig" off, "liga" off;
 
-  // /* Web_H2 */
-  font-family: Lato;
+
   font-size: 30px;
   font-style: normal;
   font-weight: 500;
