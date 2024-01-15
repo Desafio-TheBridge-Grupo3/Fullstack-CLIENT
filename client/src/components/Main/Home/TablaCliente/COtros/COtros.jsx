@@ -93,7 +93,8 @@ const COtros = () => {
             <option value={0.05}>5%</option>
             <option value={0.10}>10%</option>
           </select>
-
+          </article>
+          <article className="cotros">
           <label>Otros conceptos</label>
           <input placeholder="--" type="number" value={otrosImporte1} onChange={(e) => update(e, setOtrosImporte1)}/>
           <label>Incluir en nuestra propuesta</label>
