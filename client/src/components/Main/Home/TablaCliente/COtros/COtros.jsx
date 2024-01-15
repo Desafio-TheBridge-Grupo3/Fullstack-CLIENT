@@ -23,7 +23,7 @@ const COtros = () => {
     setter(Number(event.target.value))
   }
   const updateBoolean = (event, setter) =>{
-    setter(Boolean(event.target.value))
+    setter(Boolean(event.target.checked))
   }
 
   useEffect(() => {
@@ -49,9 +49,11 @@ const COtros = () => {
   useEffect(() => {
     updateOtros({ ...otros, otrosImporte1})
   }, [otrosImporte1])
+
   useEffect(() => {
     updateOtros({ ...otros, otrosPropuesta1})
   }, [otrosPropuesta1])
+
   useEffect(() => {
     updateOtros({ ...otros, otrosAnual1})
   }, [otrosAnual1])
@@ -59,9 +61,11 @@ const COtros = () => {
   useEffect(() => {
     updateOtros({ ...otros, otrosImporte2})
   }, [otrosImporte2])
+
   useEffect(() => {
     updateOtros({ ...otros, otrosPropuesta2})
   }, [otrosPropuesta2])
+
   useEffect(() => {
     updateOtros({ ...otros, otrosAnual2})
   }, [otrosAnual2])
@@ -93,16 +97,16 @@ const COtros = () => {
           <label>Otros conceptos</label>
           <input placeholder="--" type="number" value={otrosImporte1} onChange={(e) => update(e, setOtrosImporte1)}/>
           <label>Incluir en nuestra propuesta</label>
-          <input type="checkbox" value={otrosPropuesta1} onChange={(e) => updateBoolean(e, setOtrosPropuesta1)}/> 
+          <input type="checkbox" checked={otrosPropuesta1} onChange={(e) => updateBoolean(e, setOtrosPropuesta1)}/> 
           <label>Cobro anual</label>
-          <input type="checkbox" value={otrosAnual1} onChange={(e) => updateBoolean(e, setOtrosAnual1)}/> 
+          <input type="checkbox" checked={otrosAnual1} onChange={(e) => updateBoolean(e, setOtrosAnual1)}/> 
 
           <label>Otros conceptos</label>
           <input placeholder="--" type="number" value={otrosImporte2} onChange={(e) => update(e, setOtrosImporte2)}/>
           <label>Incluir en nuestra propuesta</label>
-          <input type="checkbox" value={otrosPropuesta2} onChange={(e) => updateBoolean(e, setOtrosPropuesta2)}/> 
+          <input type="checkbox" checked={otrosPropuesta2} onChange={(e) => updateBoolean(e, setOtrosPropuesta2)}/> 
           <label>Cobro anual</label>
-          <input type="checkbox" value={otrosAnual2} onChange={(e) => updateBoolean(e, setOtrosAnual1)}/>
+          <input type="checkbox" checked={otrosAnual2} onChange={(e) => updateBoolean(e, setOtrosAnual2)}/>
 
         </article>
       </article>
