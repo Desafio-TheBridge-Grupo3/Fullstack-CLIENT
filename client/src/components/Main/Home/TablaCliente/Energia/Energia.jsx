@@ -1,13 +1,28 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import React from "react";
 import TR from '../../TR/TR';
-import { EnergiaContext } from '../../../../../context/EnergiaContext';
+import { MacroContext } from '../../../../../context/MacroContext';
 
 
 const Energia = () => {
 
-  const { totalesEnergia} = useContext(EnergiaContext);
+  const { tablaCliente, updateTablaCliente } = useContext(MacroContext);
+  const [totalEnergiaFacturaC, setTotalEnergiaFacturaC] = useState(0)
+  const [totalEnergiaAnualC, setTotalEnergiaAnualC] = useState(0)
 
+  useEffect(()=>{
+    const total=Object.values(tablaCliente.totalFactura).reduce((a,b) => a+b)
+    setTotalEnergiaFacturaC(total)
+    updateTablaCliente({...tablaCliente, totalEnergiaFacturaC:total})
+  }, [tablaCliente.totalFactura])
+
+  useEffect(()=>{
+    const total=Object.values(tablaCliente.totalAnual).reduce((a,b) => a+b)
+    setTotalEnergiaAnualC(total)
+    updateTablaCliente({...tablaCliente, totalEnergiaAnualC:total})
+  }, [tablaCliente.totalAnual])
+
+  
 
   return (
     <>
@@ -42,14 +57,14 @@ const Energia = () => {
         </tbody>
         <tfoot>
         <tr>
-          <td className="total"><input type="number" disabled value={Object.values(totalesEnergia.consumoAnual).reduce((a,b) => a+b)}/></td>
-          <td className="total"><input type="number" disabled value={Object.values(totalesEnergia.consumoActual).reduce((a,b) => a+b)}/></td>
+          <td className="total"><input type="number" disabled value={Object.values(tablaCliente.consumoAnual).reduce((a,b) => a+b)}/></td>
+          <td className="total"><input type="number" disabled value={Object.values(tablaCliente.consumoActual).reduce((a,b) => a+b)}/></td>
           <td className="hidden"></td>
           <td className="hidden"></td>
           <td className="hidden"></td>
           <td className="hidden"></td>
-          <td className="total"><input type="number" disabled value={Object.values(totalesEnergia.totalFactura).reduce((a,b) => a+b)}/></td>
-          <td className="total"><input type="number" disabled value={Object.values(totalesEnergia.totalAnual).reduce((a,b) => a+b)}/></td>
+          <td className="total"><input type="number" disabled value={totalEnergiaFacturaC}/></td>
+          <td className="total"><input type="number" disabled value={totalEnergiaAnualC}/></td>
         </tr>
         </tfoot>
       </table>

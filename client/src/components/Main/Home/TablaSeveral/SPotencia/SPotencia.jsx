@@ -1,11 +1,27 @@
 import React from "react";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import TRPS from "../../TRPS/TRPS";
-import { PropuestaPotenciaContext } from "../../../../../context/PropuestaPotenciaContext";
+import { MacroContext } from "../../../../../context/MacroContext";
+
 
 const SPotencia = () => {
 
-  const { totalesPotencia } = useContext(PropuestaPotenciaContext);
+  const { tablaSeveral, updateTablaSeveral } = useContext(MacroContext);
+  const [totalPotenciaFacturaSev, setTotalPotenciaFacturaSev] = useState(0)
+  const [totalPotenciaAnualSev, setTotalPotenciaAnualSev] = useState(0)
+
+  useEffect(() => {
+    const total = Object.values(tablaSeveral.totalFacturaP).reduce((a, b) => a + b)
+    setTotalPotenciaFacturaSev(total)
+    updateTablaSeveral({ ...tablaSeveral, totalPotenciaFacturaSev: total })
+  }, [tablaSeveral.totalFacturaP])
+
+
+  useEffect(() => {
+    const total = Object.values(tablaSeveral.totalAnualP).reduce((a, b) => a + b)
+    setTotalPotenciaAnualSev(total)
+    updateTablaSeveral({ ...tablaSeveral, totalPotenciaAnualSev: total })
+  }, [tablaSeveral.totalAnualP])
 
 
   return (
@@ -43,8 +59,8 @@ const SPotencia = () => {
               <td className="hidden"></td>
               <td className="hidden"></td>
               <td className="hidden"></td>
-              <td className="total"><input type="number" disabled value={Object.values(totalesPotencia.totalFacturaP).reduce((a,b) => a+b)}/></td>
-              <td className="total"><input type="number" disabled value={Object.values(totalesPotencia.totalAnualP).reduce((a,b) => a+b)}/></td>
+              <td className="total"><input type="number" disabled value={totalPotenciaFacturaSev}/></td>
+              <td className="total"><input type="number" disabled value={totalPotenciaAnualSev}/></td>
             </tr>
           </tfoot>
         </table>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useContext } from 'react';
-import { EnergiaContext } from "../../../../context/EnergiaContext";
+import { useDebounce } from "use-debounce";
+import { MacroContext } from "../../../../context/MacroContext";
 
 const TR = ({ periodo }) => {
 
@@ -13,19 +14,20 @@ const TR = ({ periodo }) => {
   const [totalPagoFactura, setTotalPagoFactura] = useState([])
   const [totalPagoAnual, setTotalPagoAnual] = useState([])
 
+  const [debouncedDescuento] = useDebounce(descuento, 500);
 
   const update = (event, setter) => {
     setter(Number(event.target.value))
   }
 
-  const { totalesEnergia, updateTotalesEnergia } = useContext(EnergiaContext);
+  const { tablaCliente, updateTablaCliente } = useContext(MacroContext);
 
   //multiplicaciones en fila
   useEffect(() => {
     setPrecioConDescuento(preciosFacturacion - (preciosFacturacion * (descuento / 100)))
   }, [preciosFacturacion, descuento])
 
-
+//multiplicaciones en cada fila
   useEffect(() => {
     setTotalPagoAnual(preciosAnual * consumoAnual * (1 - descuento / 100))
   }, [consumoAnual, preciosAnual, descuento])
@@ -36,46 +38,46 @@ const TR = ({ periodo }) => {
 
 
 
-//sumas en columna
+// actualizadores del context
   useEffect(() => {
     const sumar = {
-      ...totalesEnergia.consumoAnual
+      ...tablaCliente.consumoAnual
     }
     sumar[periodo] = consumoAnual
 
-    updateTotalesEnergia({ ...totalesEnergia, consumoAnual: sumar })
+    updateTablaCliente({ ...tablaCliente, consumoAnual: sumar })
   }, [consumoAnual])
 
 
   useEffect(() => {
     const sumar = {
-      ...totalesEnergia.consumoActual
+      ...tablaCliente.consumoActual
     }
     sumar[periodo] = consumoActual
 
-    updateTotalesEnergia({ ...totalesEnergia, consumoActual: sumar })
+    updateTablaCliente({ ...tablaCliente, consumoActual: sumar })
   }, [consumoActual])
 
 
   useEffect(() => {
     const sumar = {
-      ...totalesEnergia.totalFactura
+      ...tablaCliente.totalFactura
     }
     sumar[periodo] = totalPagoFactura
 
-    updateTotalesEnergia({ ...totalesEnergia, totalFactura: sumar })
+    updateTablaCliente({ ...tablaCliente, totalFactura: sumar })
 
-  }, [totalPagoFactura])
+  }, [totalPagoFactura, descuento])
 
 
   useEffect(() => {
     const sumar = {
-      ...totalesEnergia.totalAnual
+      ...tablaCliente.totalAnual
     }
     sumar[periodo] = totalPagoAnual
 
-    updateTotalesEnergia({ ...totalesEnergia, totalAnual: sumar })
-  }, [totalPagoAnual])
+    updateTablaCliente({ ...tablaCliente, totalAnual: sumar })
+  }, [totalPagoAnual, debouncedDescuento])
 
 
 
