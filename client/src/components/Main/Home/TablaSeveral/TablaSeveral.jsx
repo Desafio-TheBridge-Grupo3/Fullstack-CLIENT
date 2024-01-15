@@ -6,6 +6,7 @@ import Form from './Form';
 import Otros from "./Otros";
 import STotal from './STotal';
 
+import Charts from './Charts'
 
 const TablaSeveral = () => {
 
@@ -15,7 +16,8 @@ const TablaSeveral = () => {
     <>
       <section className="tablaGrande">
         <h1 className="tituloTabla">Propuesta Several</h1>
-        <Form />
+        <Form/>
+        <Charts/>
         <article className="tabla">
           <Franja />
           <SEnergia />
