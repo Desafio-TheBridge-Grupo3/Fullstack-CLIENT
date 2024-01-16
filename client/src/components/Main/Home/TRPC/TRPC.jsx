@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useContext } from "react";
 import { MacroContext } from "../../../../context/MacroContext";
 
@@ -13,11 +13,8 @@ const [precioConDescuento, setPrecioConDescuento] = useState([])
 const [totalPagoFactura, setTotalPagoFactura] = useState([])
 const [totalPagoAnual, setTotalPagoAnual] = useState([])
 
-const update = (event, setter) => {
-  setter(Number(event.target.value))
-}
 
-const { tablaCliente, updateTablaCliente } = useContext(MacroContext);
+const { tablaCliente, otros, updateTablaCliente } = useContext(MacroContext);
 
 
 //multiplicaciones en cada fila
@@ -26,16 +23,37 @@ useEffect(() => {
 }, [precioPotencia, descuento])
 
 useEffect(() => {
+  setTotalPagoFactura(potenciaFacturada *(precioPotencia - (precioPotencia * (descuento / 100))) * otros.diasFacturacion)
+  }, [potenciaFacturada, precioPotencia, descuento, otros.diasFacturacion])
+
+useEffect(() => {
   setTotalPagoAnual(potenciaContratada * precioPotencia * 365 )
 }, [potenciaContratada, precioPotencia])
 
+
+
+// actualizadores del context
+
 useEffect(() => {
-setTotalPagoFactura(potenciaFacturada*precioConDescuento * 30)
-}, [potenciaFacturada, precioConDescuento])
-// cambiar por dias facturados
+  const sumar = {
+    ...tablaCliente.potenciaContratada
+  }
+  sumar[periodo] = potenciaContratada
+
+  updateTablaCliente({ ...tablaCliente, potenciaContratada: sumar })
+}, [potenciaContratada])
 
 
-//sumas en columna
+useEffect(() => {
+  const sumar = {
+    ...tablaCliente.potenciaFacturada
+  }
+  sumar[periodo] = potenciaFacturada
+
+  updateTablaCliente({ ...tablaCliente, potenciaFacturada: sumar })
+}, [potenciaFacturada])
+
+
 useEffect(() => {
   const sumar = {
     ...tablaCliente.totalFacturaP
@@ -60,10 +78,10 @@ useEffect(() => {
 
   return (
     <tr>
-        <td><input type="number"  placeholder="--" value={potenciaContratada} onChange={(e) => update(e, setPotenciaContratada)} /></td>
-        <td><input type="number" placeholder="--" value={potenciaFacturada} onChange={(e) => update(e, setPotenciaFacturada)} /></td>
-        <td><input type="number" placeholder="--" value={precioPotencia} onChange={(e) => update(e, setPrecioPotencia)} /></td>
-        <td><input type="number" placeholder="--" value={descuento} onChange={(e) => update(e, setDescuento)} /></td>
+        <td><input type="number"  placeholder="--" value={potenciaContratada} onChange={(e) => setPotenciaContratada(Number(e.target.value))} /></td>
+        <td><input type="number" placeholder="--" value={potenciaFacturada} onChange={(e) => setPotenciaFacturada(Number(e.target.value))} /></td>
+        <td><input type="number" placeholder="--" value={precioPotencia} onChange={(e) => setPrecioPotencia(Number(e.target.value))} /></td>
+        <td><input type="number" placeholder="--" value={descuento} onChange={(e) => setDescuento(Number(e.target.value))} /></td>
         <td className="total"><input type="number" disabled value={precioConDescuento}/></td>
       <td className="total"><input type="number" disabled value={totalPagoFactura}/></td>
       <td className="total"><input type="number" disabled value={totalPagoAnual}/></td>

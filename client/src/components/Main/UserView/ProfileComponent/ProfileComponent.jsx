@@ -1,5 +1,4 @@
 import React from "react";
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 const ProfileComponent = () => {
@@ -11,7 +10,7 @@ const ProfileComponent = () => {
     </h1>
     <section className="newProposal">
     <h3>Crear nueva propuesta</h3>
-    <img src="./img/addIcon.png" className="addIcon"/>
+    <a href="/carga"><img src="./img/addIcon.png" className="addIcon"/></a>
     </section>
     <section className="lastProposals">
     <h1>Últimas propuestas</h1>

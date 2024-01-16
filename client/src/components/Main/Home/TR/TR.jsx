@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useContext } from 'react';
+import { useDebounce } from "use-debounce";
 import { MacroContext } from "../../../../context/MacroContext";
 
 const TR = ({ periodo }) => {
@@ -13,6 +14,7 @@ const TR = ({ periodo }) => {
   const [totalPagoFactura, setTotalPagoFactura] = useState([])
   const [totalPagoAnual, setTotalPagoAnual] = useState([])
 
+  const [debouncedDescuento] = useDebounce(descuento, 500);
 
   const update = (event, setter) => {
     setter(Number(event.target.value))
@@ -25,7 +27,7 @@ const TR = ({ periodo }) => {
     setPrecioConDescuento(preciosFacturacion - (preciosFacturacion * (descuento / 100)))
   }, [preciosFacturacion, descuento])
 
-
+//multiplicaciones en cada fila
   useEffect(() => {
     setTotalPagoAnual(preciosAnual * consumoAnual * (1 - descuento / 100))
   }, [consumoAnual, preciosAnual, descuento])
@@ -36,7 +38,7 @@ const TR = ({ periodo }) => {
 
 
 
-//sumas en columna
+// actualizadores del context
   useEffect(() => {
     const sumar = {
       ...tablaCliente.consumoAnual
@@ -65,7 +67,7 @@ const TR = ({ periodo }) => {
 
     updateTablaCliente({ ...tablaCliente, totalFactura: sumar })
 
-  }, [totalPagoFactura])
+  }, [totalPagoFactura, descuento])
 
 
   useEffect(() => {
@@ -75,7 +77,7 @@ const TR = ({ periodo }) => {
     sumar[periodo] = totalPagoAnual
 
     updateTablaCliente({ ...tablaCliente, totalAnual: sumar })
-  }, [totalPagoAnual])
+  }, [totalPagoAnual, debouncedDescuento])
 
 
 
