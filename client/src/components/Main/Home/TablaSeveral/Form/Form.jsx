@@ -7,18 +7,20 @@ const Form = () => {
 
   const [objeto, setObjeto] = useState({
     "cia": "AEQ",
-    "zone": "B",
+    "zone": "P",
     "rate": "2.0TD",
-    "indexed_date": "01/10/2023",
+    "indexed_date": "01/01/2023",
     "fee": "20,0",
     "product_cia": "ARMONIA",
-    "market": "F" 
-})
+    "market": "F"
+  })
 
 
-  const updateObj = (key, event, setter) => {
-    setter([`${key}`][`${event.target.value}`]);
-} 
+  const updateObj = (key, event) => {
+    setObjeto({...objeto, [`${key}`]: event.target.value})
+};
+
+
 
 
   useEffect(() => {
@@ -37,7 +39,7 @@ const Form = () => {
     getFunction
   }, [objeto])
 
-console.log(objeto)
+ 
 
   return (
 
@@ -47,7 +49,7 @@ console.log(objeto)
         <div className="label">
           <label htmlFor="tipo">Tipo de sistema</label>
         </div>
-        <select name="tipo" id="tipo" className="select" onChange={(event) => updateObj("zone", event, setObjeto)}>
+        <select name="tipo" id="tipo" className="select" onChange={(event) => updateObj("zone", event)}>
           <option value="P">Península</option>
           <option value="B">Baleares</option>
           <option value="C">Canarias</option>
@@ -59,7 +61,7 @@ console.log(objeto)
         <div className="label">
           <label htmlFor="tarifa">Tarifa</label>
         </div>
-        <select name="tarifa" id="tarifa" className="select">
+        <select name="tarifa" id="tarifa" className="select" onChange={(event) => updateObj("rate", event)}>
           <option value="2.0TD">2.0TD</option>
           <option value="3.0TD">3.0TD</option>
           <option value="6.1TD">6.1TD</option>
@@ -71,10 +73,10 @@ console.log(objeto)
         <div className="label">
           <label htmlFor="cia">CIA</label>
         </div>
-        <select name="cia" id="cia" className="select">
+        <select name="cia" id="cia" className="select" onChange={(event) => updateObj("cia", event)}>
+          <option value="AEQ">AEQ</option>
           <option value="ACCIONA">ACCIONA</option>
           <option value="ADI">ADI</option>
-          <option value="AEQ">AEQ</option>
           <option value="CANDELA">CANDELA</option>
           <option value="ELEIA">ELEIA</option>
           <option value="ENDESA">ENDESA</option>
@@ -95,9 +97,9 @@ console.log(objeto)
         <div className="label">
           <label htmlFor="metodo">Método</label>
         </div>
-        <select name="metodo" id="metodo" className="select">
-          <option value="I">INDEXADO</option>
+        <select name="metodo" id="metodo" className="select" onChange={(event) => updateObj("market", event)}>
           <option value="F">FIJO</option>
+          <option value="I">INDEXADO</option>
         </select>
       </article>
 
@@ -106,7 +108,8 @@ console.log(objeto)
         <div className="label">
           <label htmlFor="productos">Producto CIA (POT)</label>
         </div>
-        <select name="productos" id="productos" className="select">
+        <select name="productos" id="productos" className="select" onChange={(event) => updateObj("product_cia", event)}>
+          <option value="	ARMONIA	">	ARMONIA	 </option>
           <option value="	 CLASICA SNP	">	 CLASICA SNP	 </option>
           <option value="	 CLASICA SNP TE3	">	 CLASICA SNP TE3	 </option>
           <option value="	2.0<10kW PLAN ESTABLE	">	2.0(menor)10kW PLAN ESTABLE	 </option>
@@ -125,7 +128,6 @@ console.log(objeto)
           <option value="	ADI SENCILLA	">	ADI SENCILLA	 </option>
           <option value="	ALTO	">	ALTO	 </option>
           <option value="	AMPERE	">	AMPERE	 </option>
-          <option value="	ARMONIA	">	ARMONIA	 </option>
           <option value="	BALANCE OF ENERGY 0	">	BALANCE OF ENERGY 0	 </option>
           <option value="	BALANCE OF ENERGY 1	">	BALANCE OF ENERGY 1	 </option>
           <option value="	BALANCE OF ENERGY 2	">	BALANCE OF ENERGY 2	 </option>
@@ -295,7 +297,7 @@ console.log(objeto)
         <div className="label">
           <label htmlFor="mes">Mes de Facturación (Indexado)</label>
         </div>
-        <select name="mes" id="mes" className="select">
+        <select name="mes" id="mes" className="select" onChange={(event) => updateObj("indexed_date", event)}>
           <option value="01/01/2023">01/01/2023</option>
           <option value="01/02/2023">01/02/2023</option>
           <option value="01/03/2023">01/03/2023</option>
@@ -316,9 +318,9 @@ console.log(objeto)
         <div className="label">
           <label htmlFor="fee">FEE (Energía)</label>
         </div>
-        <select name="fee" id="fee" className="select">
-          <option value="1.5">1.5 %</option>
+        <select name="fee" id="fee" className="select"  onChange={(event) => updateObj("fee", event)}>
           <option value="3">3 %</option>
+          <option value="1.5">1.5 %</option>
           <option value="4">4 %</option>
           <option value="5">5 %</option>
           <option value="6">6 %</option>
