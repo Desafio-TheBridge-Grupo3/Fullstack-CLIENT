@@ -2,7 +2,7 @@ import React from "react";
 import { usePDF } from 'react-to-pdf';
 
 const Oferta = () => {
-  const { toPDF, targetRef } = usePDF({filename: 'page.pdf'});
+  const { toPDF, targetRef } = usePDF({filename: 'SeveralComparator.pdf'});
 
   return (
     <div>

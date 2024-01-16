@@ -2,11 +2,11 @@ import React from "react";
 import Franja from '../TablaCliente/Franja';
 import SEnergia from './SEnergia';
 import SPotencia from './SPotencia';
-import Form from './Form';
+import FormChartComponent from "./FormCharts/FormCharts";
 import Otros from "./Otros";
 import STotal from './STotal';
 
-import Charts from './Charts'
+
 
 const TablaSeveral = () => {
 
@@ -16,8 +16,7 @@ const TablaSeveral = () => {
     <>
       <section className="tablaGrande">
         <h1 className="tituloTabla">Propuesta Several</h1>
-        <Form/>
-        <Charts/>
+       <FormChartComponent/> 
         <article className="tabla">
           <Franja />
           <SEnergia />
