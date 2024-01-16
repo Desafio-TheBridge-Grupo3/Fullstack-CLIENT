@@ -9,14 +9,14 @@
     width: 563px;
     height: 248px;
     background-color: #fbfafa;
-    position:relative;
+    position: relative;
 }
 
 #pregunta {
     color: $bold;
 }
 
-.carga{
+.carga {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -35,50 +35,113 @@
     color: $oscuro;
     font-weight: bold;
     border: none;
-    &:hover{
+
+    &:hover {
         background-color: $insertarHover;
     }
-    &:active{
+
+    &:active {
         background-color: $insertarPresion;
     }
 }
 
-#mini{
+.file-select {
+    text-align: center;
+    background: $insertar;
+    padding: 10px;
+    border-radius: 12px;
+    margin: 16px auto;
+    width: 472px;
+    height: 48px;
+    border: none;
+
+    &:hover {
+        background-color: $insertarHover;
+    }
+
+    &:active {
+        background-color: $insertarPresion;
+    }
+}
+
+.completed{
+    text-align: center;
+    background: $conArchivo;
+    padding: 10px;
+    border-radius: 12px;
+    margin: 16px auto;
+    width: 472px;
+    height: 48px;
+    border: none; 
+}
+
+.completed>label svg, .completed>label>span {
+    color: $white;
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+
+.inputfile+label {
+    max-width: 80%;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+    color: $oscuro;
+}
+
+.inputfile+label svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    margin-right: 0.25em;
+}
+
+.no-continuar {
+    display: none;
+}
+
+#mini {
     font-size: smaller;
     color: $text;
     margin-top: 0;
 }
 
-input[type=file]{
-    background-color: $insertar;
-    
-    &:hover{
-        background-color: $insertarHover;
-    }
-    &:active{
-        background-color: $insertarPresion;
-    }
-}
 
-#cambio{
+
+
+#cambio {
     width: 472px;
-height: 48px;
-padding: 10px;
-text-align: center;
-color:$boton;
-font-weight: bold;
+    height: 48px;
+    padding: 10px;
+    text-align: center;
+    color: $boton;
+    font-weight: bold;
 
-&:hover {
-    color: $botonHover;
+    &:hover {
+        color: $botonHover;
+    }
+
+    &:active {
+        color: $botonPresion;
+    }
 }
 
-&:active{
-    color: $botonPresion;
-}
-}
 
-
-.boton-sin-archivo{
+.boton-sin-archivo {
     width: 472px;
     height: 48px;
     padding: 10px;
@@ -91,7 +154,7 @@ font-weight: bold;
     border: none;
 }
 
-.boton-con-archivo{
+.boton-con-archivo {
     width: 472px;
     height: 48px;
     padding: 10px;
@@ -102,11 +165,12 @@ font-weight: bold;
     color: $white;
     font-weight: bold;
     border: none;
+
     &:hover {
         color: $botonHover;
     }
-    
-    &:active{
+
+    &:active {
         color: $botonPresion;
     }
 }
