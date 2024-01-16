@@ -2,11 +2,9 @@ import React from "react";
 
 const LoginImage = () => {
   return (
-    <>
-    <section >
+    <article >
       <img src="./img/loginImage.png" className="severalImage"/>
-    </section>
-    </>
+    </article>
   );
 };
 
