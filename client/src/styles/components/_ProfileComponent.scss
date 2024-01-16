@@ -1,7 +1,6 @@
 @import "../utils/variables.scss";
 
 main {
-  width: 1440px;
   height: 1024px;
 }
 
@@ -14,25 +13,21 @@ main {
 
 h1 {
   color: var(--several-grises-80, #333);
-
-/* Web_H1 */
-font-family: Lato;
-font-size: 56px;
-font-style: normal;
-font-weight: 800;
-line-height: 64px; /* 114.286% */
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 64px;
+  /* 114.286% */
 }
 
 h3 {
   color: var(--several-grises-70, #4d4d4d);
   font-feature-settings: "clig" off, "liga" off;
-
-  // /* Web_H2 */
-  font-family: Lato;
   font-size: 30px;
   font-style: normal;
   font-weight: 500;
-  line-height: 48px; /* 120% */
+  line-height: 48px;
+  /* 120% */
 }
 
 .newProposal {
@@ -60,9 +55,11 @@ h3 {
   border-radius: 100px;
   background: var(--several-principal-80, #d94043);
   transition: 0.3s;
+
   &:hover {
     background-color: $insertarHover;
   }
+
   &:active {
     background-color: $insertarPresion;
   }
@@ -112,7 +109,8 @@ h3 {
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
-  line-height: 20px; /* 83.333% */
+  line-height: 20px;
+  /* 83.333% */
   justify-content: flex-end;
 }
 
