@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 
 const Form = () => {
@@ -9,34 +10,40 @@ const Form = () => {
     "cia": "AEQ",
     "zone": "P",
     "rate": "2.0TD",
-    "indexed_date": "01/01/2023",
-    "fee": "20,0",
+    "indexed_date": null,
+    "fee": "20",
     "product_cia": "ARMONIA",
     "market": "F"
   })
 
 
   const updateObj = (key, event) => {
-    setObjeto({...objeto, [`${key}`]: event.target.value})
+    setObjeto({...objeto, [`${key}`]: `${event.target.value}`})
+    console.log(event.target.value)
 };
 
-
-
-
   useEffect(() => {
-
     const getFunction = async () => {
-      const res = await axios.get(
-        `${import.meta.env.VITE_SERVER_URL}/route`,
-        JSON.stringify(objeto),
+      const res = await axios.post(`${import.meta.env.VITE_SERVER_URL}/cia-pow-several`,
+      JSON.stringify(objeto),
         {
           headers: { "Content-Type": "application/json" },
+          withCredentials: true,
+        }
+      );
+
+      const resDos = await axios.post(`${import.meta.env.VITE_SERVER_URL}/cia-con-several`,
+        objeto,
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
         }
       );
       console.log(res.data);
+      console.log(resDos.data);
     }
 
-    getFunction
+    getFunction()
   }, [objeto])
 
  
@@ -298,18 +305,19 @@ const Form = () => {
           <label htmlFor="mes">Mes de Facturación (Indexado)</label>
         </div>
         <select name="mes" id="mes" className="select" onChange={(event) => updateObj("indexed_date", event)}>
-          <option value="01/01/2023">01/01/2023</option>
-          <option value="01/02/2023">01/02/2023</option>
-          <option value="01/03/2023">01/03/2023</option>
-          <option value="01/04/2023">01/04/2023</option>
-          <option value="01/05/2023">01/05/2023</option>
-          <option value="01/06/2023">01/06/2023</option>
-          <option value="01/07/2023">01/07/2023</option>
-          <option value="01/08/2023">01/08/2023</option>
-          <option value="01/09/2023">01/09/2023</option>
-          <option value="01/10/2023">01/10/2023</option>
-          <option value="01/11/2023">01/11/2023</option>
-          <option value="01/12/2023">01/12/2023</option>
+          <option value="null"></option>
+          <option value="01-01-2023">01/01/2023</option>
+          <option value="01-02-2023">01/02/2023</option>
+          <option value="01-03-2023">01/03/2023</option>
+          <option value="01-04-2023">01/04/2023</option>
+          <option value="01-05-2023">01/05/2023</option>
+          <option value="01-06-2023">01/06/2023</option>
+          <option value="01-07-2023">01/07/2023</option>
+          <option value="01-08-2023">01/08/2023</option>
+          <option value="01-09-2023">01/09/2023</option>
+          <option value="01-10-2023">01/10/2023</option>
+          <option value="01-11-2023">01/11/2023</option>
+          <option value="01-12-2023">01/12/2023</option>
 
         </select>
       </article>
