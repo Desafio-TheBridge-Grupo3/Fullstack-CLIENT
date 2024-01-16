@@ -10,6 +10,7 @@ const TablaCliente = () => {
 
   return (
     <>
+    
       <section className="tablaGrande">
         <article className="compañia" >
           <h1 className="tituloTabla">Compañía actual</h1>
