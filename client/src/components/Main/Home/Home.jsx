@@ -132,7 +132,12 @@ const Home = () => {
           otrosPropuesta2: false,
           otrosAnual2:false,
           iva:0.21,
-          otrosConceptosAnuales:0
+          otrosConceptos:0,
+          otrosConceptosAnuales:0,
+          importeTotalFacturaCliente:0,
+          importeAnualEstimadoCliente:0,
+          importeTotalFacturaSeveral:0,
+          importeAnualEstimadoSeveral:0
         })
 
 

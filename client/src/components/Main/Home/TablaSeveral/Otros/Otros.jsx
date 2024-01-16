@@ -6,7 +6,7 @@ const Otros = () => {
 
   const { otros, updateOtros } = useContext(MacroContext);
 
-  const [otherConcepts, setOtrosConceptos] = useState([])
+  const [otrosConceptos, setOtrosConceptos] = useState([])
   const [otrosConceptosAnuales, setOtrosConceptosAnuales] = useState([])
 
   
@@ -35,10 +35,15 @@ const Otros = () => {
       anual = otros.otrosImporte2 * cociente
     } 
     setOtrosConceptosAnuales(anual)
-    updateOtros({...otros, otrosConceptosAnuales } )
   }, [otros.otrosPropuesta1,otros.otrosPropuesta2, otros.otrosImporte1, otros.otrosImporte2, otros.otrosAnual1, otros.otrosAnual2])
 
+  useEffect(()=>{
+    updateOtros({...otros, otrosConceptos } )
+  }, [otrosConceptos])
 
+useEffect(()=>{
+  updateOtros({...otros, otrosConceptosAnuales } )
+}, [otrosConceptosAnuales])
 
   return (
     <>
@@ -50,7 +55,7 @@ const Otros = () => {
 
 
         <p>Otros conceptos</p>
-        <input disabled value={otherConcepts} />
+        <input disabled value={otrosConceptos} />
 
 
         <p >Otros conceptos anual</p>
