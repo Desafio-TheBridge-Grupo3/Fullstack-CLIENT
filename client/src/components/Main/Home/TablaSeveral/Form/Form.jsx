@@ -24,7 +24,7 @@ const Form = () => {
 
   useEffect(() => {
     const getFunction = async () => {
-      const res = await axios.post(`${import.meta.env.VITE_SERVER_URL}/cia-pow-several`,
+      const res = await axios.post(`${import.meta.env.VITE_SERVER_URL}/cia-con-several`,
       JSON.stringify(objeto),
         {
           headers: { "Content-Type": "application/json" },
@@ -32,15 +32,9 @@ const Form = () => {
         }
       );
 
-      const resDos = await axios.post(`${import.meta.env.VITE_SERVER_URL}/cia-con-several`,
-        objeto,
-        {
-          headers: { "Content-Type": "application/json" },
-          withCredentials: true,
-        }
-      );
+    
       console.log(res.data);
-      console.log(resDos.data);
+      
     }
 
     getFunction()
