@@ -21,10 +21,7 @@ const LoginForm = () => {
 
     const email = data.get("email");
     const password = data.get("password");
-
-    console.log(email, password);
-
-
+    
     if (email && password) {
       try {
         const res = await axios.post(
