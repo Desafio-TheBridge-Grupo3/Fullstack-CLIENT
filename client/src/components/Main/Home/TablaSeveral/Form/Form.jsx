@@ -16,8 +16,8 @@ const Form = () => {
 })
 
 
-  const updateObj = (key, e) => {
-    setObjeto([`${key}`][`${e.target.value}`]);
+  const updateObj = (key, event, setter) => {
+    setter([`${key}`][`${event.target.value}`]);
 } 
 
 
@@ -37,10 +37,7 @@ const Form = () => {
     getFunction
   }, [objeto])
 
-
-
-
-
+console.log(objeto)
 
   return (
 
@@ -50,7 +47,7 @@ const Form = () => {
         <div className="label">
           <label htmlFor="tipo">Tipo de sistema</label>
         </div>
-        <select name="tipo" id="tipo" className="select" onChange={updateObj("zone", e)}>
+        <select name="tipo" id="tipo" className="select" onChange={(event) => updateObj("zone", event, setObjeto)}>
           <option value="P">Península</option>
           <option value="B">Baleares</option>
           <option value="C">Canarias</option>
