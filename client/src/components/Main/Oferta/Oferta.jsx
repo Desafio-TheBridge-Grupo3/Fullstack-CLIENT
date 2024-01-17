@@ -73,60 +73,60 @@ const Oferta = () => {
                   <th>P6</th>
                 </tr>
                 <tr>
-                  <td className="typeInput">Precios potencia (€/kWh/dia)</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
+                  <td className="typeInput campitos">Precios potencia (€/kWh/dia)</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
                 </tr>
                 <tr>
-                  <td className="typeInput">
+                  <td className="typeInput campitos">
                     Precios energía media anual (€/kWh)
                   </td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
                 </tr>
                 <tr>
-                  <td className="typeInput">Precios energía (€/kWh)</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
+                  <td className="typeInput campitos">Precios energía (€/kWh)</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
                 </tr>
                 <tr>
-                  <td className="typeInput">Consumo anual estimado (Kwh)</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
+                  <td className="typeInput campitos">Consumo anual estimado (Kwh)</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
                 </tr>
                 <tr>
-                  <td className="typeInput">Consumo factura actual (Kwh)</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
+                  <td className="typeInput campitos">Consumo factura actual (Kwh)</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
                 </tr>
                 <tr>
-                  <td className="typeInput">Potencia facturada (Kw)</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
+                  <td className="typeInput campitos">Potencia facturada (Kw)</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
                 </tr>
               </table>
               <table className="conclusionesFactura">
@@ -170,33 +170,33 @@ const Oferta = () => {
                   <th>P6</th>
                 </tr>
                 <tr>
-                  <td className="typeInput">Precios potencia (€/kWh/dia)</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
+                  <td className="typeInput campitos">Precios potencia (€/kWh/dia)</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
                 </tr>
                 <tr>
-                  <td className="typeInput">
+                  <td className="typeInput campitos">
                     Precios energía media anual (€/kWh)
                   </td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
                 </tr>
                 <tr>
-                  <td className="typeInput">Precios energía (€/kWh)</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
-                  <td className="inputPeriodo">0,000000 €</td>
+                  <td className="typeInput campitos">Precios energía (€/kWh)</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
+                  <td className="inputPeriodo campitos">0,000000 €</td>
                 </tr>
               </table>
               <table className="conclusionesFactura">
