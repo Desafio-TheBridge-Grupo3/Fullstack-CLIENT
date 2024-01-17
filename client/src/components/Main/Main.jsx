@@ -12,9 +12,12 @@ const Main = () => {
 
   const { user } = useContext(UserContext);
 
+  
+
   return (
     <>
     <main>
+    
     <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/metodo" element ={<Metodo/>}/>
@@ -24,6 +27,7 @@ const Main = () => {
         <Route path="/pdf" element={<Oferta />} />
         <Route path="/*" element={<Navigate to={"/"} />} /> 
       </Routes>
+      
     </main>
 
     </>
