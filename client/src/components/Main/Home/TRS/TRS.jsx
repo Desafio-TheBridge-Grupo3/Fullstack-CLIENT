@@ -27,7 +27,6 @@ const TRS = ({ periodo }) => {
   
 
   useEffect(() => {
-    const total =0
     const sumar = {
       ...tablaSeveral.totalFactura
     }
@@ -52,7 +51,7 @@ const TRS = ({ periodo }) => {
       <td className="disabled"><input placeholder="--" type="number" disabled value={tablaCliente.consumoAnual[periodo]} /></td>
       <td className="disabled"><input placeholder="--" type="number" disabled value={tablaCliente.consumoActual[periodo]}  /></td>
       <td className="disabled"><input  type="number" value={preciosEnergia[periodo]} disabled /></td>
-      <td className="disabled"><input type="number" value={preciosEnergia[periodo]} /></td>
+      <td className="disabled"><input type="number" value={preciosEnergia[periodo]} disabled/></td>
       <td className="disabled"><input type="number"  placeholder="--" disabled/></td>
       <td className="total"><input type="number" disabled value={preciosEnergia[periodo]} /></td>
       <td className="total"><input type="number" disabled value={totalPagoFactura} /></td>

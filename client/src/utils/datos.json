@@ -57,12 +57,12 @@
             "pow_price_P4": "0.0",
             "pow_price_P5": "0.0",
             "pow_price_P6": "0.0",
-            "con_price_P1": 0.22803309898000002,
-            "con_price_P2": 0.18122208578,
-            "con_price_P3": 0.15794595655,
-            "con_price_P4": 0,
-            "con_price_P5": 0,
-            "con_price_P6": 0
+            "con_price_P1": "0.22803309898000002",
+            "con_price_P2": "0.18122208578",
+            "con_price_P3": "0.15794595655",
+            "con_price_P4": "0",
+            "con_price_P5": "0",
+            "con_price_P6": "0"
         }
     }
 ]

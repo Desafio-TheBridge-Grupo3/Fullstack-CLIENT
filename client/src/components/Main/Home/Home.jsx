@@ -175,7 +175,7 @@ const Home = () => {
     setPreciosEnergia(newPreciosEnergia);
   }
   const updatePreciosPotencia = (newPreciosPotencia) => {
-    setPreciosEnergia(newPreciosPotencia);
+    setPreciosPotencia(newPreciosPotencia);
   }
 
   const data = { tablaCliente, tablaSeveral, otros, preciosEnergia, preciosPotencia, updateTablaCliente, updateTablaSeveral, updateOtros, updatePreciosEnergia, updatePreciosPotencia }

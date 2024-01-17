@@ -138,8 +138,7 @@ const Form = () => {
         }
       }
       mockData()
-      console.log("holiiii");
-      console.log(objeto);
+      
     }, 1500);
 
     return () => {
@@ -153,6 +152,10 @@ const Form = () => {
     updatePreciosEnergia({ ...preciosEnergia, P1: P1con, P2: P2con, P3: P3con, P4: P4con, P5: P5con, P6: P6con })
 
   }, [P1con, P2con, P3con, P4con, P5con, P6con])
+
+  useEffect(() => {
+    updatePreciosPotencia({ ...preciosPotencia, P1: P1pow, P2: P2pow, P3: P3pow, P4: P4pow, P5: P5pow, P6: P6pow })
+  }, [P1pow, P2pow, P3pow, P4pow, P5pow, P6pow])
 
   return (
 
