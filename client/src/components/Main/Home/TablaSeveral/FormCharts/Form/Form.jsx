@@ -6,6 +6,49 @@ import datos from '../../../../../../utils/datos.json'
 
 const Form = () => {
 
+
+  const [objeto, setObjeto] = useState({
+    cia: "CANDELA",
+    zone: "P",
+    rate: "6.1TD",
+    indexed_date: "01-01-2022",
+    fee: "06 / Bi0,015",
+    product_cia: "LUMEN",
+    market: "I"
+  })
+
+  const objeto1 ={
+    "cia": "AEQ",
+    "zone": "C",
+    "rate": "2.0TD",
+    "indexed_date": "01-07-2023",
+    "fee": "6",
+    "product_cia": "ARMONIA",
+    "market": "I"
+  }
+
+
+  const objeto2 ={
+    cia: "CANDELA",
+    zone: "P",
+    rate: "6.1TD",
+    indexed_date: "01-01-2022",
+    fee: "06 / Bi0,015",
+    product_cia: "LUMEN",
+    market: "I" 
+  }
+
+  const objeto3 ={
+    cia: "ACCIONA",
+    zone: "B",
+    rate: "2.0TD",
+    indexed_date: "01-03-2023",
+    fee: " Levante+ ",
+    product_cia: "LEVANTE+",
+    market: "I" 
+  }
+
+
   const [P1con, setP1con] = useState(0)
   const [P2con, setP2con] = useState(0)
   const [P3con, setP3con] = useState(0)
@@ -18,19 +61,6 @@ const Form = () => {
   const [P4pow, setP4pow] = useState(0)
   const [P5pow, setP5pow] = useState(0)
   const [P6pow, setP6pow] = useState(0)
-
-
-
-  const [objeto, setObjeto] = useState({
-    "cia": "AEQ",
-    "zone": "C",
-    "rate": "2.0TD",
-    "indexed_date": "01-07-2023",
-    "fee": "6",
-    "product_cia": "ARMONIA",
-    "market": "I"
-  })
-
 
 
 
@@ -60,10 +90,54 @@ const Form = () => {
     // Llamar a la función asincrónicamente
     getFunction();
 
-    // Esperar 1 segundo antes de verificar si hay un error y mostrar los datos
+    // Esperar 1.5 segundos antes de verificar si hay un error y mostrar los datos
     const timeoutId = setTimeout(() => {
-      console.log(datos);
-    }, 1000);
+      const mockData = () =>{
+     
+      if (objeto.cia === objeto1.cia) {
+        setP1con(datos[0].data.con_price_P1)
+        setP2con(datos[0].data.con_price_P2)
+        setP3con(datos[0].data.con_price_P3)
+        setP4con(datos[0].data.con_price_P4)
+        setP5con(datos[0].data.con_price_P5)
+        setP6con(datos[0].data.con_price_P6)
+        setP1pow(datos[0].data.pow_price_P1)
+        setP2pow(datos[0].data.pow_price_P2)
+        setP3pow(datos[0].data.pow_price_P3)
+        setP4pow(datos[0].data.pow_price_P4)
+        setP5pow(datos[0].data.pow_price_P5)
+        setP6pow(datos[0].data.pow_price_P6)
+      } else if (objeto.cia === objeto2.cia) {
+        setP1con(datos[1].data.con_price_P1)
+        setP2con(datos[1].data.con_price_P2)
+        setP3con(datos[1].data.con_price_P3)
+        setP4con(datos[1].data.con_price_P4)
+        setP5con(datos[1].data.con_price_P5)
+        setP6con(datos[1].data.con_price_P6)
+        setP1pow(datos[1].data.pow_price_P1)
+        setP2pow(datos[1].data.pow_price_P2)
+        setP3pow(datos[1].data.pow_price_P3)
+        setP4pow(datos[1].data.pow_price_P4)
+        setP5pow(datos[1].data.pow_price_P5)
+        setP6pow(datos[1].data.pow_price_P6)
+      } else if (objeto.cia === objeto3.cia) {
+        setP1con(datos[2].data.con_price_P1)
+        setP2con(datos[2].data.con_price_P2)
+        setP3con(datos[2].data.con_price_P3)
+        setP4con(datos[2].data.con_price_P4)
+        setP5con(datos[2].data.con_price_P5)
+        setP6con(datos[2].data.con_price_P6)
+        setP1pow(datos[2].data.pow_price_P1)
+        setP2pow(datos[2].data.pow_price_P2)
+        setP3pow(datos[2].data.pow_price_P3)
+        setP4pow(datos[2].data.pow_price_P4)
+        setP5pow(datos[2].data.pow_price_P5)
+        setP6pow(datos[2].data.pow_price_P6)
+      } 
+    }
+    mockData()
+    
+    }, 1500);
 
     return () => {
       // Limpiar el temporizador si el componente se desmonta antes de 1 segundo
