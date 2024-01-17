@@ -8,7 +8,7 @@ import COtros from './COtros'
 
 const TablaCliente = () => {
 
-  const [logo, setLogo] = useState(null)
+  const [logo, setLogo] = useState("src/assets/endesa.png")
 
   const updateLogo = (event) => {
     setLogo(event.target.value)
@@ -23,7 +23,6 @@ const TablaCliente = () => {
           
           <h1 className="tituloTabla">Compañía actual</h1>
           <select name="compañia" id="compañia" onChange={(event) => updateLogo(event)}>
-            <option value="null">Seleccionar compañía</option>
             <option value="src\assets\endesa.png">Endesa</option>
             <option value="src\assets\iberdrola_logo.png">Iberdrola</option>
             <option value="src\assets\candela.png">Candela</option>
