@@ -8,13 +8,13 @@ const Form = () => {
 
   const [objeto, setObjeto] = useState({
     "cia": "AEQ",
-    "zone": "P",
+    "zone": "C",
     "rate": "2.0TD",
-    "indexed_date": null,
-    "fee": "20",
+    "indexed_date": "01-07-2023",
+    "fee": "6",
     "product_cia": "ARMONIA",
-    "market": "F"
-  })
+    "market": "I" 
+})
 
 
   const updateObj = (key, event) => {
