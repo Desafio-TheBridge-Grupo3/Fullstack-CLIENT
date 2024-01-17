@@ -8,6 +8,7 @@ import { MacroContext } from "../../../context/MacroContext";
 
 const Home = () => {
 
+  const navigate = useNavigate()
   const generarPDF = () => {
     navigate("/pdf");
   };

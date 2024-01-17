@@ -8,7 +8,7 @@ const Oferta = () => {
   return (
     <>
       <div ref={targetRef}>
-        <main>
+        <secion id="main">
           <header id="headerPDF">
             <img src="src\assets\logo.png" alt="Logo several" id="logoPDF" />
           </header>
@@ -140,7 +140,7 @@ const Oferta = () => {
                 <th className="inputPeriodo">00,0 €</th>
               </table>
             </article>
-            <article className="total">
+            <article className="totalOferta">
               <div className="totalContainer">
                 <h3 className="totalTitulo">Total factura</h3>
                 <h3 className="totalNum">xxx,xx €</h3>
@@ -213,7 +213,7 @@ const Oferta = () => {
               La estimación anual ha sido realizada utilizando datos históricos de consumo energético publicados del ultimo año en SIPS y considerando la proyección anual del perfil de consumo así como los precios facilitados por el cliente en su última factura de luz. 
               </article>
             </article>
-            <article className="total">
+            <article className="totalOferta">
               <div className="totalContainer">
                 <h3 className="totalTitulo">Total factura</h3>
                 <h3 className="totalNum">xxx,xx €</h3>
@@ -238,7 +238,7 @@ const Oferta = () => {
           <article className="btnContainer">
           <button className="btnPDF" onClick={() => toPDF()}>DESCARGAR PDF</button>
             </article>        
-        </main>
+        </secion>
       </div>
     </>
   );

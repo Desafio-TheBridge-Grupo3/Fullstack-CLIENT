@@ -15,7 +15,7 @@
   background-color: $red;
 }
 
-main {
+#main {
   display: flex;
   width: 1440px !important;
   height: max-content;
@@ -229,9 +229,7 @@ main {
   line-height: 10px; /* 125% */
 }
 
-td {
-  max-width: 300px;
-}
+
 
 .inputPeriodo {
   //   display: flex;
@@ -259,7 +257,7 @@ td {
   gap: 40 px;
 }
 
-.total {
+.totalOferta {
   display: flex;
   width: 1325px;
   padding: 0px 24px;
