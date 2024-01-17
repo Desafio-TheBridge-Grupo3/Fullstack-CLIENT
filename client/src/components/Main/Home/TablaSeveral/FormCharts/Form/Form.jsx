@@ -1,9 +1,24 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import datos from '../../../../../../utils/datos.json'
 
 
 const Form = () => {
+
+  const [P1con, setP1con] = useState(0)
+  const [P2con, setP2con] = useState(0)
+  const [P3con, setP3con] = useState(0)
+  const [P4con, setP4con] = useState(0)
+  const [P5con, setP5con] = useState(0)
+  const [P6con, setP6con] = useState(0)
+  const [P1pow, setP1pow] = useState(0)
+  const [P2pow, setP2pow] = useState(0)
+  const [P3pow, setP3pow] = useState(0)
+  const [P4pow, setP4pow] = useState(0)
+  const [P5pow, setP5pow] = useState(0)
+  const [P6pow, setP6pow] = useState(0)
+
 
 
   const [objeto, setObjeto] = useState({
@@ -13,34 +28,50 @@ const Form = () => {
     "indexed_date": "01-07-2023",
     "fee": "6",
     "product_cia": "ARMONIA",
-    "market": "I" 
-})
+    "market": "I"
+  })
+
+
 
 
   const updateObj = (key, event) => {
-    setObjeto({...objeto, [`${key}`]: `${event.target.value}`})
+    setObjeto({ ...objeto, [`${key}`]: `${event.target.value}` })
     console.log(event.target.value)
-};
+  };
 
   useEffect(() => {
     const getFunction = async () => {
-      const res = await axios.post(`${import.meta.env.VITE_SERVER_URL}/cia-con-several`,
-      JSON.stringify(objeto),
-        {
-          headers: { "Content-Type": "application/json" },
-          withCredentials: true,
-        }
-      );
+      try {
+        const res = await axios.post(
+          `${import.meta.env.VITE_SERVER_URL}/cia-con-several`,
+          JSON.stringify(objeto),
+          {
+            headers: { "Content-Type": "application/json" },
+            withCredentials: true,
+          }
+        );
+        console.log(res.data);
+      } catch (error) {
+        // Manejar el error aquí
+        console.error("Error en la función:", error);
+      }
+    };
 
-    
-      console.log(res.data);
-      
-    }
+    // Llamar a la función asincrónicamente
+    getFunction();
 
-    getFunction()
-  }, [objeto])
+    // Esperar 1 segundo antes de verificar si hay un error y mostrar los datos
+    const timeoutId = setTimeout(() => {
+      console.log(datos);
+    }, 1000);
 
- 
+    return () => {
+      // Limpiar el temporizador si el componente se desmonta antes de 1 segundo
+      clearTimeout(timeoutId);
+    };
+  }, [objeto]);
+
+
 
   return (
 
@@ -77,8 +108,8 @@ const Form = () => {
         <select name="cia" id="cia" className="select" onChange={(event) => updateObj("cia", event)}>
           <option value="AEQ">AEQ</option>
           <option value="ACCIONA">ACCIONA</option>
-          <option value="ADI">ADI</option>
           <option value="CANDELA">CANDELA</option>
+          <option value="ADI">ADI</option>
           <option value="ELEIA">ELEIA</option>
           <option value="ENDESA">ENDESA</option>
           <option value="EVOLVE">EVOLVE</option>
@@ -111,6 +142,8 @@ const Form = () => {
         </div>
         <select name="productos" id="productos" className="select" onChange={(event) => updateObj("product_cia", event)}>
           <option value="	ARMONIA	">	ARMONIA	 </option>
+          <option value="	LUMEN	">	LUMEN	 </option>
+          <option value="	LEVANTE+	">	LEVANTE+	 </option>{/* 
           <option value="	 CLASICA SNP	">	 CLASICA SNP	 </option>
           <option value="	 CLASICA SNP TE3	">	 CLASICA SNP TE3	 </option>
           <option value="	2.0<10kW PLAN ESTABLE	">	2.0(menor)10kW PLAN ESTABLE	 </option>
@@ -192,11 +225,9 @@ const Form = () => {
           <option value="	HENRY	">	HENRY	 </option>
           <option value="	HOLALUZ INDEXADO	">	HOLALUZ INDEXADO	 </option>
           <option value="	LEVANTE	">	LEVANTE	 </option>
-          <option value="	LEVANTE+	">	LEVANTE+	 </option>
           <option value="	LOVE PLANA 24H	">	LOVE PLANA 24H	 </option>
           <option value="	LOW	">	LOW	 </option>
           <option value="	LOW GREEN	">	LOW GREEN	 </option>
-          <option value="	LUMEN	">	LUMEN	 </option>
           <option value="	LUX	">	LUX	 </option>
           <option value="	MARE KIT 1	">	MARE KIT 1	 </option>
           <option value="	MARE KIT 2	">	MARE KIT 2	 </option>
@@ -290,7 +321,7 @@ const Form = () => {
           <option value="	TU MEDIOAMBIENTE 2	">	TU MEDIOAMBIENTE 2	 </option>
           <option value="	TU MEDIOAMBIENTE 3	">	TU MEDIOAMBIENTE 3	 </option>
           <option value="	UN PRECIO CLASICO	">	UN PRECIO CLASICO	 </option>
-          <option value="	VENECIA	">	VENECIA	 </option>
+          <option value="	VENECIA	">	VENECIA	 </option> */}
         </select>
       </article>
 
@@ -300,19 +331,19 @@ const Form = () => {
         </div>
         <select name="mes" id="mes" className="select" onChange={(event) => updateObj("indexed_date", event)}>
           <option value="null"></option>
-          <option value="01-01-2023">01/01/2023</option>
-          <option value="01-02-2023">01/02/2023</option>
+          <option value="01-07-2023">01/07/2023</option>
+          <option value="01-01-2022">01/01/2022</option>
           <option value="01-03-2023">01/03/2023</option>
+          {/* <option value="01-01-2023">01/01/2023</option>
+          <option value="01-02-2023">01/02/2023</option>
           <option value="01-04-2023">01/04/2023</option>
           <option value="01-05-2023">01/05/2023</option>
           <option value="01-06-2023">01/06/2023</option>
-          <option value="01-07-2023">01/07/2023</option>
           <option value="01-08-2023">01/08/2023</option>
           <option value="01-09-2023">01/09/2023</option>
           <option value="01-10-2023">01/10/2023</option>
           <option value="01-11-2023">01/11/2023</option>
-          <option value="01-12-2023">01/12/2023</option>
-
+          <option value="01-12-2023">01/12/2023</option> */}
         </select>
       </article>
 
@@ -320,12 +351,14 @@ const Form = () => {
         <div className="label">
           <label htmlFor="fee">FEE (Energía)</label>
         </div>
-        <select name="fee" id="fee" className="select"  onChange={(event) => updateObj("fee", event)}>
-          <option value="3">3 %</option>
+        <select name="fee" id="fee" className="select" onChange={(event) => updateObj("fee", event)}>
+          <option value="6">6 %</option>
+          <option value=" 06 / Bi0,015 "> 06 / Bi0,015 </option>
+          <option value="	Levante+	">	Levante+	 </option>
+          {/* <option value="3">3 %</option>
           <option value="1.5">1.5 %</option>
           <option value="4">4 %</option>
           <option value="5">5 %</option>
-          <option value="6">6 %</option>
           <option value="8">8 %</option>
           <option value="10">10 %</option>
           <option value="15">15 %</option>
@@ -414,7 +447,6 @@ const Form = () => {
           <option value="	HENRY	">	HENRY	 </option>
           <option value="	HOLALUZ INDEXADO	">	HOLALUZ INDEXADO	 </option>
           <option value="	LEVANTE	">	LEVANTE	 </option>
-          <option value="	LEVANTE+	">	LEVANTE+	 </option>
           <option value="	LOVE PLANA 24H	">	LOVE PLANA 24H	 </option>
           <option value="	LOW	">	LOW	 </option>
           <option value="	LOW GREEN	">	LOW GREEN	 </option>
@@ -512,7 +544,7 @@ const Form = () => {
           <option value="	TU MEDIOAMBIENTE 2	">	TU MEDIOAMBIENTE 2	 </option>
           <option value="	TU MEDIOAMBIENTE 3	">	TU MEDIOAMBIENTE 3	 </option>
           <option value="	UN PRECIO CLASICO	">	UN PRECIO CLASICO	 </option>
-          <option value="	VENECIA	">	VENECIA	 </option>
+          <option value="	VENECIA	">	VENECIA	 </option> */}
         </select>
       </article>
 
