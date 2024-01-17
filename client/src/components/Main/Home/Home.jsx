@@ -155,13 +155,13 @@ const Home = () => {
   })
 
   const [preciosPotencia, setPreciosPotencia] = useState({
-      P1: 0,
-      P2: 0,
-      P3: 0,
-      P4: 0,
-      P5: 0,
-      P6: 0,
-    })
+    P1: 0,
+    P2: 0,
+    P3: 0,
+    P4: 0,
+    P5: 0,
+    P6: 0,
+  })
 
 
   const updateTablaCliente = (newTotalesCliente) => {
@@ -189,12 +189,13 @@ const Home = () => {
     <>
       <section>
         <section >
-        <MacroContext.Provider value={data}>
+          <MacroContext.Provider value={data}>
             <TablaCliente />
             <TablaSeveral />
-            </MacroContext.Provider>
-          <button onClick={generarPDF}>Generar PDF</button>
-
+          </MacroContext.Provider>
+          <article className="btnContainer">
+            <button className="btnPDF" onClick={generarPDF}>Generar PDF</button>
+          </article>
         </section>
       </section>
     </>
