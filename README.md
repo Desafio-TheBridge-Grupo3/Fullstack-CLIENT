@@ -1,4 +1,5 @@
-![the_bridge_logo_bc18d0b1dd](https://github.com/Desafio-TheBridge-Grupo3/Fullstack-CLIENT/assets/144235263/1c0e0b20-92a5-4487-8c8f-1a48e4abcafb)# Several Comparator repositorio Client
+![the_bridge_logo_bc18d0b1dd](https://github.com/Desafio-TheBridge-Grupo3/Fullstack-CLIENT/assets/144235263/1c0e0b20-92a5-4487-8c8f-1a48e4abcafb)
+# Several Comparator repositorio Client
 ## _Desafío The Bridge enero 2024_
 ![the_bridge_logo_bc18d0b1dd](https://github.com/Desafio-TheBridge-Grupo3/Fullstack-CLIENT/assets/144235263/83cad58a-e76a-4216-a3df-9650939b80f1)
 ![logo](https://github.com/Desafio-TheBridge-Grupo3/Fullstack-CLIENT/assets/144235263/31a86c3a-d185-4f87-a59c-b670e67f8458)
