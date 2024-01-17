@@ -82,7 +82,28 @@ const Form = () => {
             withCredentials: true,
           }
         );
-        console.log(res.data);
+        setP1con(res.data.con_price_P1)
+        setP2con(res.data.con_price_P2)
+        setP3con(res.data.con_price_P3)
+        setP4con(res.data.con_price_P4)
+        setP5con(res.data.con_price_P5)
+        setP6con(res.data.con_price_P6)
+
+        const response = await axios.post(
+          `${import.meta.env.VITE_SERVER_URL}/cia-pow-several`,
+          JSON.stringify(objeto),
+          {
+            headers: { "Content-Type": "application/json" },
+            withCredentials: true,
+          }
+        );
+        setP1pow(response.data.pow_price_P1)
+        setP2pow(response.data.pow_price_P2)
+        setP3pow(response.data.pow_price_P3)
+        setP4pow(response.data.pow_price_P4)
+        setP5pow(response.data.pow_price_P5)
+        setP6pow(response.data.pow_price_P6)
+
       } catch (error) {
         // Manejar el error aquí
         console.error("Error en la función:", error);
@@ -138,7 +159,7 @@ const Form = () => {
         }
       }
       mockData()
-      
+
     }, 1500);
 
     return () => {
