@@ -8,6 +8,7 @@ import UserView from "./UserView";
 import Oferta from "./Oferta";
 import { UserContext } from "../../context/UserContext"
 import { useNavigate } from "react-router-dom";
+import PrivateRoutes from "../../utils/PrivateRoutes.middleware";
 
 const Main = () => {
   const navigate = useNavigate()
@@ -21,15 +22,17 @@ const Main = () => {
   return (
     <>
       <main>
-
         <Routes>
           <Route path="/" element={<Login />} />
+          
+          <Route element={<PrivateRoutes />}>
+            <Route path="/metodo" element={<Metodo />} />
+            <Route path="/carga" element={<CargaDatos />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/profile" element={<UserView />} />
+            <Route path="/pdf" element={<Oferta />} />
+          </Route>
 
-          {user ? <Route path="/metodo" element={<Metodo />} /> : noPermitirAcceso}
-          {user ? <Route path="/carga" element={<CargaDatos />} /> : noPermitirAcceso}
-          {user ? <Route path="/home" element={<Home />} /> : noPermitirAcceso}
-          {user ? <Route path="/profile" element={<UserView />} /> : noPermitirAcceso}
-          {user ? <Route path="/pdf" element={<Oferta />} /> : noPermitirAcceso}
           <Route path="/*" element={<Navigate to={"/"} />} />
         </Routes>
 

@@ -20,12 +20,14 @@ function App() {
   const signOut = () => {
     Cookies.remove("access-token");
     setCookies("");
+    localStorage.clear();
+    return navigate('/')
   };
 
   useEffect(() => {
     const cookie = Cookies.get("access-token");
     cookie ? setCookies(cookie) : setCookies("");
-
+  const storage = localStorage.getItem("tortilla");
     async function getCurrentUser(token) {
       const user = await axios.get(
         `${import.meta.env.VITE_SERVER_URL}/auth/currentuser/${token}`
@@ -35,6 +37,8 @@ function App() {
 
     if (cookies) {
       getCurrentUser(cookies);
+    } else if (storage) {
+      setUser(storage)
     } else {
       setUser("");
     }
@@ -96,7 +100,7 @@ function App() {
     <>
       <BrowserRouter>
         <UserContext.Provider value={data}>
-          {user ? <Header /> : ""}
+          {user ? <Header /> : <div/>}
           <Main />
         </UserContext.Provider>
         <Footer />
