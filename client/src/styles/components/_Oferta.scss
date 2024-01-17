@@ -17,7 +17,8 @@
 
 main {
   display: flex;
-  width: 1440px;
+  width: 1440px !important;
+  height: max-content;
   padding-bottom: 27.71px;
   flex-direction: column;
   align-items: center;
@@ -102,12 +103,12 @@ main {
 }
 
 #topRight {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 720px;
-    margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 720px;
+  margin-top: 30px;
 }
 
 #graphContainer {
@@ -140,7 +141,7 @@ main {
 .factura {
   display: flex;
   padding: 20px;
-//   margin: 10px;
+  //   margin: 10px;
   width: 300px;
   height: 250px;
   flex-direction: column;
@@ -160,17 +161,22 @@ main {
 
 #middle {
   display: flex;
-  padding: 8px;
+  width: 1380px;
+  padding: 20px;
+  margin: 10px;
   flex-direction: column;
   align-items: flex-start;
   gap: 4px;
+  border-radius: 18px;
+  background: var(--several-principal-0, #fbf9f9);
 }
 
 #middleTitle {
   display: flex;
+  width: 1350px;
   flex-direction: row;
+  align-items: baseline;
   justify-content: space-between;
-  align-items: flex-start;
 }
 
 .mTitle {
@@ -183,20 +189,158 @@ main {
   line-height: 20px; /* 125% */
 }
 
-#mTitle2 {
+.mTitle2 {
   color: var(--several-grises-70, #4d4d4d);
   text-align: center;
   font-family: Lato;
-  font-size: 10px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 600;
   line-height: 20px; /* 200% */
 }
 
+#middleTabla {
+  display: flex;
+  padding: 16px 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  border-radius: 18px;
+  background: var(--background-mode, #fff);
+}
+
+.facturaActual {
+  gap: 4px;
+  background: var(--background-mode, #fff);
+}
+
+.typeInput {
+  display: flex;
+  width: 400px;
+  height: 16px;
+  align-items: center;
+  color: var(--several-principal-60, #d77d7f);
+
+  /* PDF_8 */
+  font-family: Lato;
+  // font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 10px; /* 125% */
+}
+
+td {
+  max-width: 300px;
+}
+
+.inputPeriodo {
+  //   display: flex;
+  width: 165px;
+  height: 16px;
+  //   flex-direction: row;
+  //   justify-content: center;
+  //   align-items: center;
+  color: var(--several-grises-70, #4d4d4d);
+
+  /* PDF_8 */
+  font-family: Lato;
+  //   font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 10px; /* 125% */
+}
+
+.conclusionesFactura {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: baseline;
+  width: 1250px;
+  gap: 40 px;
+}
+
+.total {
+  display: flex;
+  width: 1325px;
+  padding: 0px 24px;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  background-color: $background;
+}
+
+.totalContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.totalTitulo {
+  color: var(--several-grises-70, #4d4d4d);
+  font-family: Lato;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 20px; /* 166.667% */
+}
+
+.totalNum {
+  color: var(--several-principal-100, #c6171a);
+  font-family: Lato;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 142.857% */
+}
+
 #bottom {
+  display: flex;
+  width: 1380px;
+  padding: 20px;
+  margin: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  border-radius: 18px;
+  background: var(--several-principal-0, #fbf9f9);
+}
+
+#bottomTextContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 25px;
+}
+
+#aclaracion {
+  display: flex;
+  width: 1350px;
+  text-align: start;
+  margin-top: 15px;
+}
+
+.btnContainer {
     display: flex;
-    padding: 8px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-  }
+    justify-content: end;
+    width: 1350px;
+}
+
+.btnPDF {
+  display: flex;
+  width: 291.279px;
+  height: 67.765px;
+  padding: 8.744px 13.116px;
+  justify-content: center;
+  align-items: center;
+  gap: 13.116px;
+  border-radius: 6.558px;
+  background: #c1240c;
+  color: #fbf9f9;
+  text-align: center;
+  font-family: Lato;
+  font-size: 13.116px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 17.488px; /* 133.333% */
+}
