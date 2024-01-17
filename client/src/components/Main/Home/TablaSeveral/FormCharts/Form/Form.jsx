@@ -1,23 +1,25 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import datos from '../../../../../../utils/datos.json'
+import { MacroContext } from "../../../../../../context/MacroContext";
 
 
 const Form = () => {
 
+  const { preciosEnergia, preciosPotencia, updatePreciosEnergia, updatePreciosPotencia } = useContext(MacroContext);
 
   const [objeto, setObjeto] = useState({
-    cia: "CANDELA",
-    zone: "P",
-    rate: "6.1TD",
-    indexed_date: "01-01-2022",
-    fee: "06 / Bi0,015",
-    product_cia: "LUMEN",
-    market: "I"
+    "cia": "ACCIONA",
+    "zone": "B",
+    "rate": "2.0TD",
+    "indexed_date": "01-03-2023",
+    "fee": " Levante+ ",
+    "product_cia": "LEVANTE+",
+    "market": "I"
   })
 
-  const objeto1 ={
+  const objeto1 = {
     "cia": "AEQ",
     "zone": "C",
     "rate": "2.0TD",
@@ -28,24 +30,24 @@ const Form = () => {
   }
 
 
-  const objeto2 ={
-    cia: "CANDELA",
-    zone: "P",
-    rate: "6.1TD",
-    indexed_date: "01-01-2022",
-    fee: "06 / Bi0,015",
-    product_cia: "LUMEN",
-    market: "I" 
+  const objeto2 = {
+    "cia": "CANDELA",
+    "zone": "P",
+    "rate": "6.1TD",
+    "indexed_date": "01-01-2022",
+    "fee": "06 / Bi0,015",
+    "product_cia": "LUMEN",
+    "market": "I"
   }
 
-  const objeto3 ={
-    cia: "ACCIONA",
-    zone: "B",
-    rate: "2.0TD",
-    indexed_date: "01-03-2023",
-    fee: " Levante+ ",
-    product_cia: "LEVANTE+",
-    market: "I" 
+  const objeto3 = {
+    "cia": "ACCIONA",
+    "zone": "B",
+    "rate": "2.0TD",
+    "indexed_date": "01-03-2023",
+    "fee": " Levante+ ",
+    "product_cia": "LEVANTE+",
+    "market": "I"
   }
 
 
@@ -92,60 +94,65 @@ const Form = () => {
 
     // Esperar 1.5 segundos antes de verificar si hay un error y mostrar los datos
     const timeoutId = setTimeout(() => {
-      const mockData = () =>{
-     
-      if (objeto.cia === objeto1.cia) {
-        setP1con(datos[0].data.con_price_P1)
-        setP2con(datos[0].data.con_price_P2)
-        setP3con(datos[0].data.con_price_P3)
-        setP4con(datos[0].data.con_price_P4)
-        setP5con(datos[0].data.con_price_P5)
-        setP6con(datos[0].data.con_price_P6)
-        setP1pow(datos[0].data.pow_price_P1)
-        setP2pow(datos[0].data.pow_price_P2)
-        setP3pow(datos[0].data.pow_price_P3)
-        setP4pow(datos[0].data.pow_price_P4)
-        setP5pow(datos[0].data.pow_price_P5)
-        setP6pow(datos[0].data.pow_price_P6)
-      } else if (objeto.cia === objeto2.cia) {
-        setP1con(datos[1].data.con_price_P1)
-        setP2con(datos[1].data.con_price_P2)
-        setP3con(datos[1].data.con_price_P3)
-        setP4con(datos[1].data.con_price_P4)
-        setP5con(datos[1].data.con_price_P5)
-        setP6con(datos[1].data.con_price_P6)
-        setP1pow(datos[1].data.pow_price_P1)
-        setP2pow(datos[1].data.pow_price_P2)
-        setP3pow(datos[1].data.pow_price_P3)
-        setP4pow(datos[1].data.pow_price_P4)
-        setP5pow(datos[1].data.pow_price_P5)
-        setP6pow(datos[1].data.pow_price_P6)
-      } else if (objeto.cia === objeto3.cia) {
-        setP1con(datos[2].data.con_price_P1)
-        setP2con(datos[2].data.con_price_P2)
-        setP3con(datos[2].data.con_price_P3)
-        setP4con(datos[2].data.con_price_P4)
-        setP5con(datos[2].data.con_price_P5)
-        setP6con(datos[2].data.con_price_P6)
-        setP1pow(datos[2].data.pow_price_P1)
-        setP2pow(datos[2].data.pow_price_P2)
-        setP3pow(datos[2].data.pow_price_P3)
-        setP4pow(datos[2].data.pow_price_P4)
-        setP5pow(datos[2].data.pow_price_P5)
-        setP6pow(datos[2].data.pow_price_P6)
-      } 
-    }
-    mockData()
-    
+      const mockData = () => {
+
+        if (objeto.cia === objeto1.cia) {
+          setP1con(datos[0].data.con_price_P1)
+          setP2con(datos[0].data.con_price_P2)
+          setP3con(datos[0].data.con_price_P3)
+          setP4con(datos[0].data.con_price_P4)
+          setP5con(datos[0].data.con_price_P5)
+          setP6con(datos[0].data.con_price_P6)
+          setP1pow(datos[0].data.pow_price_P1)
+          setP2pow(datos[0].data.pow_price_P2)
+          setP3pow(datos[0].data.pow_price_P3)
+          setP4pow(datos[0].data.pow_price_P4)
+          setP5pow(datos[0].data.pow_price_P5)
+          setP6pow(datos[0].data.pow_price_P6)
+        } else if (objeto.cia === objeto2.cia) {
+          setP1con(datos[1].data.con_price_P1)
+          setP2con(datos[1].data.con_price_P2)
+          setP3con(datos[1].data.con_price_P3)
+          setP4con(datos[1].data.con_price_P4)
+          setP5con(datos[1].data.con_price_P5)
+          setP6con(datos[1].data.con_price_P6)
+          setP1pow(datos[1].data.pow_price_P1)
+          setP2pow(datos[1].data.pow_price_P2)
+          setP3pow(datos[1].data.pow_price_P3)
+          setP4pow(datos[1].data.pow_price_P4)
+          setP5pow(datos[1].data.pow_price_P5)
+          setP6pow(datos[1].data.pow_price_P6)
+        } else if (objeto.cia === objeto3.cia) {
+          setP1con(datos[2].data.con_price_P1)
+          setP2con(datos[2].data.con_price_P2)
+          setP3con(datos[2].data.con_price_P3)
+          setP4con(datos[2].data.con_price_P4)
+          setP5con(datos[2].data.con_price_P5)
+          setP6con(datos[2].data.con_price_P6)
+          setP1pow(datos[2].data.pow_price_P1)
+          setP2pow(datos[2].data.pow_price_P2)
+          setP3pow(datos[2].data.pow_price_P3)
+          setP4pow(datos[2].data.pow_price_P4)
+          setP5pow(datos[2].data.pow_price_P5)
+          setP6pow(datos[2].data.pow_price_P6)
+        }
+      }
+      mockData()
+      console.log("holiiii");
+      console.log(objeto);
     }, 1500);
 
     return () => {
       // Limpiar el temporizador si el componente se desmonta antes de 1 segundo
       clearTimeout(timeoutId);
     };
+
   }, [objeto]);
 
+  useEffect(() => {
+    updatePreciosEnergia({ ...preciosEnergia, P1: P1con, P2: P2con, P3: P3con, P4: P4con, P5: P5con, P6: P6con })
 
+  }, [P1con, P2con, P3con, P4con, P5con, P6con])
 
   return (
 
@@ -156,8 +163,8 @@ const Form = () => {
           <label htmlFor="tipo">Tipo de sistema</label>
         </div>
         <select name="tipo" id="tipo" className="select" onChange={(event) => updateObj("zone", event)}>
-          <option value="P">Península</option>
           <option value="B">Baleares</option>
+          <option value="P">Península</option>
           <option value="C">Canarias</option>
 
         </select>
@@ -180,8 +187,8 @@ const Form = () => {
           <label htmlFor="cia">CIA</label>
         </div>
         <select name="cia" id="cia" className="select" onChange={(event) => updateObj("cia", event)}>
-          <option value="AEQ">AEQ</option>
           <option value="ACCIONA">ACCIONA</option>
+          <option value="AEQ">AEQ</option>
           <option value="CANDELA">CANDELA</option>
           <option value="ADI">ADI</option>
           <option value="ELEIA">ELEIA</option>
@@ -204,8 +211,8 @@ const Form = () => {
           <label htmlFor="metodo">Método</label>
         </div>
         <select name="metodo" id="metodo" className="select" onChange={(event) => updateObj("market", event)}>
-          <option value="F">FIJO</option>
           <option value="I">INDEXADO</option>
+          <option value="F">FIJO</option>
         </select>
       </article>
 
@@ -215,9 +222,10 @@ const Form = () => {
           <label htmlFor="productos">Producto CIA (POT)</label>
         </div>
         <select name="productos" id="productos" className="select" onChange={(event) => updateObj("product_cia", event)}>
+          <option value="	LEVANTE+	">	LEVANTE+	 </option>
           <option value="	ARMONIA	">	ARMONIA	 </option>
           <option value="	LUMEN	">	LUMEN	 </option>
-          <option value="	LEVANTE+	">	LEVANTE+	 </option>{/* 
+          {/* 
           <option value="	 CLASICA SNP	">	 CLASICA SNP	 </option>
           <option value="	 CLASICA SNP TE3	">	 CLASICA SNP TE3	 </option>
           <option value="	2.0<10kW PLAN ESTABLE	">	2.0(menor)10kW PLAN ESTABLE	 </option>
@@ -404,10 +412,9 @@ const Form = () => {
           <label htmlFor="mes">Mes de Facturación (Indexado)</label>
         </div>
         <select name="mes" id="mes" className="select" onChange={(event) => updateObj("indexed_date", event)}>
-          <option value="null"></option>
+          <option value="01-03-2023">01/03/2023</option>
           <option value="01-07-2023">01/07/2023</option>
           <option value="01-01-2022">01/01/2022</option>
-          <option value="01-03-2023">01/03/2023</option>
           {/* <option value="01-01-2023">01/01/2023</option>
           <option value="01-02-2023">01/02/2023</option>
           <option value="01-04-2023">01/04/2023</option>
@@ -426,9 +433,9 @@ const Form = () => {
           <label htmlFor="fee">FEE (Energía)</label>
         </div>
         <select name="fee" id="fee" className="select" onChange={(event) => updateObj("fee", event)}>
+          <option value="	Levante+	">	Levante+	 </option>
           <option value="6">6 %</option>
           <option value=" 06 / Bi0,015 "> 06 / Bi0,015 </option>
-          <option value="	Levante+	">	Levante+	 </option>
           {/* <option value="3">3 %</option>
           <option value="1.5">1.5 %</option>
           <option value="4">4 %</option>

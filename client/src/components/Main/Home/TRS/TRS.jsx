@@ -4,9 +4,7 @@ import { MacroContext } from "../../../../context/MacroContext";
 
 const TRS = ({ periodo }) => {
 
-  const [preciosAnual, setPreciosAnual] = useState([])
-  const [preciosFacturacion, setPreciosFacturacion] = useState([])
-  const [precioConDescuento, setPrecioConDescuento] = useState([])
+  
   const [totalPagoFactura, setTotalPagoFactura] = useState([])
   const [totalPagoAnual, setTotalPagoAnual] = useState([])
 
@@ -14,26 +12,26 @@ const TRS = ({ periodo }) => {
     setter(Number(event.target.value))
   }
 
-  const { tablaCliente, tablaSeveral, updateTablaSeveral, precios } = useContext(MacroContext);
+  const { tablaCliente, tablaSeveral, updateTablaSeveral, preciosEnergia } = useContext(MacroContext);
 
   //multiplicaciones en fila
   useEffect(() => {
-    setTotalPagoAnual(preciosAnual * tablaCliente.consumoAnual[periodo] )
-  }, [tablaCliente.consumoAnual, preciosAnual])
+    setTotalPagoAnual(preciosEnergia[periodo] * tablaCliente.consumoAnual[periodo] )
+  }, [tablaCliente.consumoAnual, preciosEnergia[periodo]])
 
   useEffect(() => {
-    setTotalPagoFactura(tablaCliente.consumoActual[periodo] * precioConDescuento)
-  }, [tablaCliente.consumoActual, precioConDescuento])
+    setTotalPagoFactura(tablaCliente.consumoActual[periodo] * preciosEnergia[periodo])
+  }, [tablaCliente.consumoActual, preciosEnergia[periodo]])
 
 
   
 
   useEffect(() => {
+    const total =0
     const sumar = {
       ...tablaSeveral.totalFactura
     }
     sumar[periodo] = totalPagoFactura
-
     updateTablaSeveral({ ...tablaSeveral, totalFactura: sumar })
 
   }, [totalPagoFactura])
@@ -53,10 +51,10 @@ const TRS = ({ periodo }) => {
     <tr>
       <td className="disabled"><input placeholder="--" type="number" disabled value={tablaCliente.consumoAnual[periodo]} /></td>
       <td className="disabled"><input placeholder="--" type="number" disabled value={tablaCliente.consumoActual[periodo]}  /></td>
-      <td className="disabled"><input  type="number" value={precios.preciosEnergia[periodo]} disabled onChange={(event) => setPreciosAnual(event.target.value)}/></td>
-      <td className="disabled"><input type="number" value={precios.preciosEnergia[periodo]} disabled onChange={(event) => setPreciosFacturacion(event.target.value)}/></td>
+      <td className="disabled"><input  type="number" value={preciosEnergia[periodo]} disabled /></td>
+      <td className="disabled"><input type="number" value={preciosEnergia[periodo]} /></td>
       <td className="disabled"><input type="number"  placeholder="--" disabled/></td>
-      <td className="total"><input type="number" disabled value={precios.preciosEnergia[periodo]} onChange={(event) => setPrecioConDescuento(event.target.value)}/></td>
+      <td className="total"><input type="number" disabled value={preciosEnergia[periodo]} /></td>
       <td className="total"><input type="number" disabled value={totalPagoFactura} /></td>
       <td className="total"><input type="number" disabled value={totalPagoAnual} /></td>
     </tr>

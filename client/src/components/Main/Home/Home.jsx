@@ -140,25 +140,24 @@ const Home = () => {
       importeAnualEstimadoSeveral: 0
     })
 
-  const [precios, setPrecios] = useState(
-    {
-      preciosEnergia:{
-        P1: 0,
-        P2: 0,
-        P3: 0,
-        P4: 0,
-        P5: 0,
-        P6: 0
-      },
-      preciosPotencia:{
-        P1: 0,
-        P2: 0,
-        P3: 0,
-        P4: 0,
-        P5: 0,
-        P6: 0
-      }
-    })
+  const [preciosEnergia, setPreciosEnergia] = useState({
+    P1: 0,
+    P2: 0,
+    P3: 0,
+    P4: 0,
+    P5: 0,
+    P6: 0
+  })
+
+  const [preciosPotencia, setPreciosPotencia] = useState({
+      P1: 0,
+      P2: 0,
+      P3: 0,
+      P4: 0,
+      P5: 0,
+      P6: 0
+    }
+  )
 
 
   const updateTablaCliente = (newTotalesCliente) => {
@@ -172,11 +171,14 @@ const Home = () => {
     setOtros(newOtros);
   };
 
-  const updatePrecios = (newPrecios) =>{
-    setPrecios(newPrecios);
+  const updatePreciosEnergia = (newPreciosEnergia) => {
+    setPreciosEnergia(newPreciosEnergia);
+  }
+  const updatePreciosPotencia = (newPreciosPotencia) => {
+    setPreciosEnergia(newPreciosPotencia);
   }
 
-  const data = { tablaCliente, tablaSeveral, updateTablaCliente, updateTablaSeveral, otros, updateOtros, precios, updatePrecios }
+  const data = { tablaCliente, tablaSeveral, otros, preciosEnergia, preciosPotencia, updateTablaCliente, updateTablaSeveral, updateOtros, updatePreciosEnergia, updatePreciosPotencia }
 
 
   return (
