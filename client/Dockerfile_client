@@ -1,4 +1,4 @@
-FROM node:20-alpine
+FROM contenedoresdesafiotripulacionesg3.azurecr.io/alpinesecuredesafio:latest
 
 ENV APP_PORT=5173
 
