@@ -262,8 +262,7 @@ const Form = () => {
         <select name="productos" id="productos" className="select" onChange={(event) => updateObj("product_cia", event)}>
           <option value="	LEVANTE+	">	LEVANTE+	 </option>
           <option value="	ARMONIA	">	ARMONIA	 </option>
-          <option value="	LUMEN	">	LUMEN	 </option>
-          {/* 
+          <option value="	LUMEN	">	LUMEN	 </option> 
           <option value="	 CLASICA SNP	">	 CLASICA SNP	 </option>
           <option value="	 CLASICA SNP TE3	">	 CLASICA SNP TE3	 </option>
           <option value="	2.0<10kW PLAN ESTABLE	">	2.0(menor)10kW PLAN ESTABLE	 </option>
@@ -441,7 +440,7 @@ const Form = () => {
           <option value="	TU MEDIOAMBIENTE 2	">	TU MEDIOAMBIENTE 2	 </option>
           <option value="	TU MEDIOAMBIENTE 3	">	TU MEDIOAMBIENTE 3	 </option>
           <option value="	UN PRECIO CLASICO	">	UN PRECIO CLASICO	 </option>
-          <option value="	VENECIA	">	VENECIA	 </option> */}
+          <option value="	VENECIA	">	VENECIA	 </option> 
         </select>
       </article>
 
@@ -453,7 +452,7 @@ const Form = () => {
           <option value="01-03-2023">01/03/2023</option>
           <option value="01-07-2023">01/07/2023</option>
           <option value="01-01-2022">01/01/2022</option>
-          {/* <option value="01-01-2023">01/01/2023</option>
+          <option value="01-01-2023">01/01/2023</option>
           <option value="01-02-2023">01/02/2023</option>
           <option value="01-04-2023">01/04/2023</option>
           <option value="01-05-2023">01/05/2023</option>
@@ -462,7 +461,7 @@ const Form = () => {
           <option value="01-09-2023">01/09/2023</option>
           <option value="01-10-2023">01/10/2023</option>
           <option value="01-11-2023">01/11/2023</option>
-          <option value="01-12-2023">01/12/2023</option> */}
+          <option value="01-12-2023">01/12/2023</option>
         </select>
       </article>
 
@@ -474,7 +473,7 @@ const Form = () => {
           <option value="	Levante+	">	Levante+	 </option>
           <option value="6">6 %</option>
           <option value=" 06 / Bi0,015 "> 06 / Bi0,015 </option>
-          {/* <option value="3">3 %</option>
+          <option value="3">3 %</option>
           <option value="1.5">1.5 %</option>
           <option value="4">4 %</option>
           <option value="5">5 %</option>
@@ -663,7 +662,7 @@ const Form = () => {
           <option value="	TU MEDIOAMBIENTE 2	">	TU MEDIOAMBIENTE 2	 </option>
           <option value="	TU MEDIOAMBIENTE 3	">	TU MEDIOAMBIENTE 3	 </option>
           <option value="	UN PRECIO CLASICO	">	UN PRECIO CLASICO	 </option>
-          <option value="	VENECIA	">	VENECIA	 </option> */}
+          <option value="	VENECIA	">	VENECIA	 </option>
         </select>
       </article>
 
