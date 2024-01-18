@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter, useNavigate } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { UserContext } from "./context/UserContext";
@@ -13,7 +13,6 @@ function App() {
   const [user, setUser] = useState("");
   const [cookies, setCookies] = useState(false);
 
-  const navigate = useNavigate();
 
   const updateUser = (data) => {
     setUser(data);
