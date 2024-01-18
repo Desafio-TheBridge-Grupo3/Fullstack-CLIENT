@@ -11,5 +11,3 @@ RUN npm install
 RUN npm run build
 
 EXPOSE $APP_PORT
-
-CMD ["sh", "-c", "npm run preview]
