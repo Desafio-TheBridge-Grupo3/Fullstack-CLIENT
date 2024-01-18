@@ -86,10 +86,6 @@ const Form = () => {
         conObj.market === "I" ? conObj.product_cia = null : '';
         conObj.market === "F" ? conObj.indexed_date = null : '';
 
-        console.log('----------------------------');
-        console.log(conObj);
-        console.log('----------------------------');
-
         const res = await axios.post(
           `${import.meta.env.VITE_SERVER_URL}/cia-con-several`,
           JSON.stringify(conObj),
