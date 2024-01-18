@@ -21,7 +21,7 @@ function App() {
     Cookies.remove("access-token");
     setCookies("");
     localStorage.clear();
-    return navigate('/')
+    location.reload()
   };
 
   useEffect(() => {
