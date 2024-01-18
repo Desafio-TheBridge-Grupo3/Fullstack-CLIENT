@@ -14,7 +14,7 @@ const Form = () => {
     "zone": "B",
     "rate": "2.0TD",
     "indexed_date": "01-03-2023",
-    "fee": " Levante+ ",
+    "fee": "Levante+",
     "product_cia": "LEVANTE+",
     "market": "I"
   })
@@ -74,14 +74,30 @@ const Form = () => {
   useEffect(() => {
     const getFunction = async () => {
       try {
+        const conObj = {
+          cia: objeto.cia,
+          zone: objeto.zone,
+          rate: objeto.rate,
+          indexed_date: objeto.indexed_date,
+          fee: objeto.fee,
+          product_cia: objeto.product_cia,
+          market: objeto.market,
+        }
+        conObj.market === "I" ? conObj.product_cia = null : '';
+        conObj.market === "F" ? conObj.indexed_date = null : '';
+
+        console.log('----------------------------');
+        console.log(conObj);
+        console.log('----------------------------');
+
         const res = await axios.post(
           `${import.meta.env.VITE_SERVER_URL}/cia-con-several`,
-          JSON.stringify(objeto),
+          JSON.stringify(conObj),
           {
-            headers: { "Content-Type": "application/json" },
-            withCredentials: true,
+            headers: { "Content-Type": "application/json" }
           }
         );
+
         setP1con(res.data.con_price_P1)
         setP2con(res.data.con_price_P2)
         setP3con(res.data.con_price_P3)
@@ -93,10 +109,10 @@ const Form = () => {
           `${import.meta.env.VITE_SERVER_URL}/cia-pow-several`,
           JSON.stringify(objeto),
           {
-            headers: { "Content-Type": "application/json" },
-            withCredentials: true,
+            headers: { "Content-Type": "application/json" }
           }
         );
+
         setP1pow(response.data.pow_price_P1)
         setP2pow(response.data.pow_price_P2)
         setP3pow(response.data.pow_price_P3)
@@ -104,6 +120,8 @@ const Form = () => {
         setP5pow(response.data.pow_price_P5)
         setP6pow(response.data.pow_price_P6)
 
+        console.log(res.data);
+        console.log(response.data);
       } catch (error) {
         // Manejar el error aquí
         console.error("Error en la función:", error);
